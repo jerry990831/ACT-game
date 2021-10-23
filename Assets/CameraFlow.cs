@@ -4,57 +4,132 @@ using System.Collections;
 public class CameraFlow : MonoBehaviour
 {
 
-	// The target we are following
-	[SerializeField]
-	private Transform target;
-	// The distance in the x-z plane to the target
-	[SerializeField]
-	private float distance = 10.0f;
-	// the height we want the camera to be above the target
-	[SerializeField]
-	private float height = 5.0f;
 
-	[SerializeField]
-	private float rotationDamping;
-	[SerializeField]
-	private float heightDamping;
+    public Transform followTarget = null;
 
-	// Use this for initialization
-	void Start() { }
+    public Vector2 rotate;
+ 
+    public float rotateSpeed = 2;
 
-	// Update is called once per frame
-	void LateUpdate()
-	{
-		// Early out if we don't have a target
-		if (!target)
-			return;
+    
+    public float moveSpeed = 10;
 
-		// Calculate the current rotation angles
-		var wantedRotationAngle = target.eulerAngles.y;
-		var wantedHeight = target.position.y + height;
+    public float maxY = 80;
 
-		var currentRotationAngle = transform.eulerAngles.y;
-		var currentHeight = transform.position.y;
+    public float minY = -80;
 
-		// Damp the rotation around the y-axis
-		currentRotationAngle = Mathf.LerpAngle(currentRotationAngle, wantedRotationAngle, rotationDamping * Time.deltaTime);
+    public float viewSize = 60;
 
-		// Damp the height
-		currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamping * Time.deltaTime);
+    public float defaultAngle = -135;
 
-		// Convert the angle into a rotation
-		var currentRotation = Quaternion.Euler(0, currentRotationAngle, 0);
+    public float radius = 3;
 
-		// Set the position of the camera on the x-z plane to:
-		// distance meters behind the target
-		transform.position = target.position;
-		transform.position -= currentRotation * Vector3.forward * distance;
+    public float height = 1.5f;
 
-		// Set the height of the camera
-		transform.position = new Vector3(transform.position.x, currentHeight, transform.position.z);
+    public bool visiable = false;
 
-		// Always look at the target
-		transform.LookAt(target);
-	}
+    public CursorLockMode lockMode = CursorLockMode.Confined;
+
+    public float inputX;
+    public float inputY;
+
+
+    private Camera controlCamara;
+
+
+    void Start()
+    {
+        controlCamara = this.GetComponent<Camera>();
+    }
+
+    void FixedUpdate()
+    {
+        inputX = Input.GetAxis("Mouse X");
+        inputY = Input.GetAxis("Mouse Y");
+        rotate.x += inputX * rotateSpeed;
+        rotate.y += inputY * rotateSpeed;
+        viewSize += -Input.mouseScrollDelta.y * 3;
+    
+
+
+
+ 
+        if (viewSize < 1)
+        {
+            viewSize = 1;
+        }
+        else if (viewSize > 60)
+        {
+            viewSize = 60;
+        }
+
+  
+        if (rotate.x >= 360 || rotate.x <= -360)
+        {
+            rotate.x = 0;
+        }
+
+   
+        if (rotate.y < minY)
+        {
+            rotate.y = minY;
+        }
+        else if (rotate.y > maxY)
+        {
+            rotate.y = maxY;
+        }
+        controlCamara.fieldOfView = viewSize;
+        Cursor.visible = visiable;
+        Cursor.lockState = lockMode;
+
+
+    }
+
+    void LateUpdate()
+    {
+        Transform self = controlCamara.transform;
+        Vector3 startPosition = self.position;
+        Vector3 endPosition;
+
+        Vector3 targetPos = followTarget.position;
+        targetPos.y += height;
+
+        Vector2 v1 = CalcAbsolutePoint(rotate.x, radius);
+        endPosition = targetPos + new Vector3(v1.x, 0, v1.y);
+
+
+        Vector2 v2 = CalcAbsolutePoint(rotate.x + defaultAngle, 1);
+        Vector3 viewPoint = new Vector3(v2.x, 0, v2.y) + targetPos;
+
+        float dist = Vector3.Distance(endPosition, viewPoint);
+        Vector2 v3 = CalcAbsolutePoint(rotate.y, dist);
+        endPosition += new Vector3(0, v3.y, 0);
+
+
+        RaycastHit hit;
+        if (Physics.Linecast(targetPos, endPosition, out hit))
+        {
+            string name = hit.collider.gameObject.tag;
+            if (name != "MainCamera" || name != "Player")
+            {
+                endPosition = hit.point - (endPosition - hit.point).normalized * 0.2f;
+            }
+        }
+        //self.position = endPosition;
+        self.position = Vector3.Lerp(startPosition, endPosition, Time.deltaTime * moveSpeed);
+
+        Quaternion rotateQ = Quaternion.LookRotation(viewPoint - endPosition);
+        self.rotation = Quaternion.Slerp(transform.rotation, rotateQ, Time.deltaTime * moveSpeed);
+        //self.rotation = rotateQ;
+    }
+
+    public static Vector2 CalcAbsolutePoint(float angle, float dist)
+    {
+        
+        float radian = -angle * (Mathf.PI / 180);
+        float x = dist * Mathf.Cos(radian);
+        float y = dist * Mathf.Sin(radian);
+        return new Vector2(x, y);
+    }
 
 }

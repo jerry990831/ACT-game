@@ -41,7 +41,7 @@ public class player : MonoBehaviour
         rightorleft = Mathf.SmoothDamp(rightorleft,dr,ref vr,0.1f);
 
         drun = Convert.ToInt32(Input.GetKey(isrun));
-        run =  Mathf.SmoothDamp(run,drun,ref vrun,0.1f);
+        run =  Mathf.SmoothDamp(run,drun,ref vrun,0.2f);
         isroll = Input.GetKeyDown(roll); 
         isattack = Input.GetKeyDown(attack);
     }

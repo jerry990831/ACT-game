@@ -29,7 +29,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -44,7 +44,7 @@ ModelImporter:
       firstFrame: 0
       lastFrame: 81
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -30
       level: 0
       cycleOffset: 0
       loop: 0

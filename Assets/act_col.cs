@@ -5,7 +5,7 @@ using UnityEngine;
 public class act_col : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject dog;
+    public GameObject maria;
     public player input;
     private Animator act;
     public float speed = 0.0F;
@@ -17,7 +17,7 @@ public class act_col : MonoBehaviour
     void Start()
     {
         input = GetComponent<player>();
-        act = dog.GetComponent<Animator>();
+        act = maria.GetComponent<Animator>();
 
     }
 
@@ -29,21 +29,33 @@ public class act_col : MonoBehaviour
         Camera_r.y=0;
         Vector3 Camera_f = camera1.transform.forward;
         Camera_f.y=0;
-        Debug.Log(input.rightorleft*Camera_r+input.upordown*Camera_f);
-        act.SetFloat("forwards",Mathf.Sqrt((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft)));
+        act.SetFloat("forwards",Mathf.Sqrt((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft))*(input.run+1));
         if((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft)>0.1f){
-            dog.transform.forward = input.rightorleft*Camera_r+input.upordown*Camera_f;
+            Vector3 targetForward = Vector3.Slerp(maria.transform.forward,input.rightorleft*Camera_r+input.upordown*Camera_f,0.1f);
+            maria.transform.forward = targetForward;
         }
-        if((input.upordown*input.upordown)+input.rightorleft*input.rightorleft>0.10f)
-        {
-            speed =2.0f;
+        if (input.isroll){
+            act.SetTrigger("roll");
         }
-        else{
-            speed =0;
+        if (input.isattack){
+            act.SetTrigger("attack");
         }
+        if(act.GetCurrentAnimatorStateInfo(0).IsName("roll")){
+            speed = 2.0f;
+        } 
+        if(act.GetCurrentAnimatorStateInfo(0).IsName("Ground")){
+            if((input.upordown*input.upordown)+input.rightorleft*input.rightorleft>0.10f)
+            {
+                speed =2.0f*((input.run>0.1f)?2.0f:1.0f);
+            }
+            else{
+                speed =0;
+            }
+        }
+        
         CharacterController controller = GetComponent<CharacterController>();
         if (controller.isGrounded) {
-            moveDirection = dog.transform.forward;
+            moveDirection = maria.transform.forward;
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
         }

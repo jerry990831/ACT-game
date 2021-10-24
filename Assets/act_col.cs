@@ -11,6 +11,7 @@ public class act_col : MonoBehaviour
     public float speed = 0.0F;
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
+    public float walkspeed = 2.0f;
     private Vector3 moveDirection = Vector3.zero;
 
 
@@ -30,23 +31,24 @@ public class act_col : MonoBehaviour
         Vector3 Camera_f = camera1.transform.forward;
         Camera_f.y=0;
         act.SetFloat("forwards",Mathf.Sqrt((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft))*(input.run+1));
-        if((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft)>0.1f){
-            Vector3 targetForward = Vector3.Slerp(maria.transform.forward,input.rightorleft*Camera_r+input.upordown*Camera_f,0.1f);
-            maria.transform.forward = targetForward;
-        }
+        
         if (input.isroll){
             act.SetTrigger("roll");
         }
-        if (input.isattack){
+        if (input.isattack && !act.GetCurrentAnimatorStateInfo(0).IsName("roll") && speed<=2.0f){
             act.SetTrigger("attack");
         }
         if(act.GetCurrentAnimatorStateInfo(0).IsName("roll")){
-            speed = 2.0f;
+            speed = walkspeed;
         } 
         if(act.GetCurrentAnimatorStateInfo(0).IsName("Ground")){
+            if((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft)>0.1f){
+                Vector3 targetForward = Vector3.Slerp(maria.transform.forward,input.rightorleft*Camera_r+input.upordown*Camera_f,0.07f);
+                maria.transform.forward = targetForward;
+            }
             if((input.upordown*input.upordown)+input.rightorleft*input.rightorleft>0.10f)
             {
-                speed =2.0f*((input.run>0.1f)?2.0f:1.0f);
+                speed =walkspeed*((input.run>0.1f)?2.0f:1.0f);
             }
             else{
                 speed =0;

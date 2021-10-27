@@ -35,11 +35,14 @@ public class act_col : MonoBehaviour
         if (input.isroll){
             act.SetTrigger("roll");
         }
-        if (input.isattack && !act.GetCurrentAnimatorStateInfo(0).IsName("roll") && speed<=2.0f){
+        if (input.isattack && !act.GetCurrentAnimatorStateInfo(0).IsName("roll") && speed<=0.1f){
             act.SetTrigger("attack");
         }
         if(act.GetCurrentAnimatorStateInfo(0).IsName("roll")){
             speed = walkspeed;
+            if(act.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.85f){
+                speed=0;
+            }
         } 
         if(act.GetCurrentAnimatorStateInfo(0).IsName("Ground")){
             if((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft)>0.1f){
@@ -48,7 +51,7 @@ public class act_col : MonoBehaviour
             }
             if((input.upordown*input.upordown)+input.rightorleft*input.rightorleft>0.10f)
             {
-                speed =walkspeed*((input.run>0.1f)?2.0f:1.0f);
+                speed =walkspeed*(input.run+1);
             }
             else{
                 speed =0;

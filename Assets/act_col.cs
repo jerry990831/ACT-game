@@ -44,9 +44,6 @@ public class act_col : MonoBehaviour
         }
         if(act.GetCurrentAnimatorStateInfo(0).IsName("roll")){
             speed = rollspeed;
-            if(act.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.85f){
-                speed=0;
-            }
         }
         if(act.GetCurrentAnimatorStateInfo(0).IsName("Ground")){
             if((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft)>0.1f && planlocker == false){
@@ -82,7 +79,7 @@ public class act_col : MonoBehaviour
 
     public void OnattackUpdate(){
         float weightnow = act.GetLayerWeight(act.GetLayerIndex("ATTACK"));
-        weightnow = Mathf.Lerp(weightnow,weighttarget,0.01f);
+        weightnow = Mathf.Lerp(weightnow,weighttarget,0.1f);
         act.SetLayerWeight(act.GetLayerIndex("ATTACK"),weightnow);
 
     }
@@ -94,7 +91,7 @@ public class act_col : MonoBehaviour
     }
     public void OnattackidleUpdate(){
         float weightnow = act.GetLayerWeight(act.GetLayerIndex("ATTACK"));
-        weightnow = Mathf.Lerp(weightnow,weighttarget,0.01f);
+        weightnow = Mathf.Lerp(weightnow,weighttarget,0.1f);
         act.SetLayerWeight(act.GetLayerIndex("ATTACK"),weightnow);
     }
 }

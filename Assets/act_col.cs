@@ -33,7 +33,6 @@ public class act_col : MonoBehaviour
         Camera_r.y=0;
         Vector3 Camera_f = camera1.transform.forward;
         Camera_f.y=0;
-        Debug.Log(speed);
         act.SetFloat("forwards",Mathf.Sqrt((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft))*(input.run+1));
         
         if (input.isroll){

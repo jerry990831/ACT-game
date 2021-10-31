@@ -16,6 +16,8 @@ public class player : MonoBehaviour
     public bool isroll;
     public string attack;
     public bool isattack;
+    public string heal;
+    public bool isheal;
 
     public float upordown;
     public float rightorleft;
@@ -44,5 +46,6 @@ public class player : MonoBehaviour
         run =  Mathf.SmoothDamp(run,drun,ref vrun,0.2f);
         isroll = Input.GetKeyDown(roll); 
         isattack = Input.GetKeyDown(attack);
+        isheal = Input.GetKeyDown(heal);
     }
 }

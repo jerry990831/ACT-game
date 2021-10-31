@@ -16,13 +16,14 @@ public class act_col : MonoBehaviour
     private bool planlocker = false;
     private float attackspeed = 1 ;
     private float weighttarget;
-    private float rollspeed=2.0f;
+    public float rollspeed=2.0f;
+    private Rigidbody rigid;
 
     void Start()
     {
         input = GetComponent<player>();
         act = maria.GetComponent<Animator>();
-
+        rigid = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -37,6 +38,9 @@ public class act_col : MonoBehaviour
         
         if (input.isroll){
             act.SetTrigger("roll");
+        }
+        if (input.isheal){
+            act.SetTrigger("heal");
         }
         if (input.isattack && act.GetCurrentAnimatorStateInfo(0).IsName("Ground")){
             act.SetTrigger("attack");
@@ -78,7 +82,7 @@ public class act_col : MonoBehaviour
 
     public void OnattackUpdate(){
         float weightnow = act.GetLayerWeight(act.GetLayerIndex("ATTACK"));
-        weightnow = Mathf.Lerp(weightnow,weighttarget,0.1f);
+        weightnow = Mathf.Lerp(weightnow,weighttarget,0.05f);
         act.SetLayerWeight(act.GetLayerIndex("ATTACK"),weightnow);
 
     }
@@ -90,7 +94,17 @@ public class act_col : MonoBehaviour
     }
     public void OnattackidleUpdate(){
         float weightnow = act.GetLayerWeight(act.GetLayerIndex("ATTACK"));
-        weightnow = Mathf.Lerp(weightnow,weighttarget,0.1f);
+        weightnow = Mathf.Lerp(weightnow,weighttarget,0.05f);
+        act.SetLayerWeight(act.GetLayerIndex("ATTACK"),weightnow);
+    }
+    public void onhealenter(){
+         planlocker = true;
+        attackspeed = 0;
+        weighttarget = 1;
+    }
+    public void onhealupdate(){
+        float weightnow = act.GetLayerWeight(act.GetLayerIndex("ATTACK"));
+        weightnow = Mathf.Lerp(weightnow,weighttarget,0.05f);
         act.SetLayerWeight(act.GetLayerIndex("ATTACK"),weightnow);
     }
 }

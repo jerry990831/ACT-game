@@ -43,8 +43,19 @@ public Transform followTarget = null;
 
     void FixedUpdate()
     {
-        inputX = Input.GetAxis("Jright");
-        inputY = Input.GetAxis("Jup");
+        if(Input.GetAxis("Jright")!=0){
+            inputX = Input.GetAxis("Jright");
+        }
+        else{
+            inputX = Input.GetAxis("Mouse X");
+
+        }
+        if(Input.GetAxis("Jup")!=0){
+            inputY = -1*Input.GetAxis("Jup");
+        }
+        else{
+            inputY = Input.GetAxis("Mouse Y");
+        }
         rotate.x += inputX * rotateSpeed;
         rotate.y += inputY * rotateSpeed;
         viewSize += -Input.mouseScrollDelta.y * 3;

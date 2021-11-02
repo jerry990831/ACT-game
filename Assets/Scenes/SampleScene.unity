@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maria: {fileID: 1728906259}
-  input: {fileID: 899319363}
+  input: {fileID: 0}
   speed: 0
   jumpSpeed: 8
   gravity: 20
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899319356}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66990211b040af94f869ec07c43206cb, type: 3}
   m_Name: 
@@ -496,11 +496,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899319356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b77e9f880c71354eae9e9051eb84371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  du: 0
+  dr: 0
   upordown: 0
   rightorleft: 0
   isroll: 0
@@ -639,7 +641,7 @@ MonoBehaviour:
   minY: -80
   viewSize: 60
   defaultAngle: -135
-  radius: 3
+  radius: 5
   height: 1.5
   visiable: 0
   lockMode: 0

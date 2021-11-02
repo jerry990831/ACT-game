@@ -5,6 +5,8 @@ using System;
 
 public class Palyerforjoy : MonoBehaviour
 {
+        public float du;
+        public float dr;
         public float upordown;
         public float rightorleft;
         public bool isroll;
@@ -13,7 +15,8 @@ public class Palyerforjoy : MonoBehaviour
         public float run;
         public float drun;
         private float vrun;
-
+        private float vu;
+        private float vr;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +26,11 @@ public class Palyerforjoy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        upordown = Input.GetAxis("upordown");
-        rightorleft = Input.GetAxis("rightorleft");
+        
+        du = Input.GetAxis("upordown");
+        dr = Input.GetAxis("rightorleft");
+        upordown = Mathf.SmoothDamp(upordown,du,ref vu,0.1f);
+        rightorleft = Mathf.SmoothDamp(rightorleft,dr,ref vr,0.1f);
         isroll = Input.GetButtonDown("buttondown"); 
         isattack = Input.GetButtonDown("buttonup");
         isheal = Input.GetButtonDown("buttonleft");

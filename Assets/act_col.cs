@@ -6,7 +6,7 @@ public class act_col : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject maria;
-    public player input;
+    public Palyerforjoy input;
     private Animator act;
     public float speed = 0.0F;
     public float jumpSpeed = 8.0F;
@@ -21,7 +21,7 @@ public class act_col : MonoBehaviour
 
     void Start()
     {
-        input = GetComponent<player>();
+        input = GetComponent<Palyerforjoy>();
         act = maria.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
     }

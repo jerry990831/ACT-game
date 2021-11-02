@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 899319359}
   - component: {fileID: 899319362}
   - component: {fileID: 899319361}
+  - component: {fileID: 899319363}
   m_Layer: 0
   m_Name: Playerhandle
   m_TagString: Untagged
@@ -391,7 +392,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 899319356}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -424,7 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maria: {fileID: 1728906259}
-  input: {fileID: 899319360}
+  input: {fileID: 899319363}
   speed: 0
   jumpSpeed: 8
   gravity: 20
@@ -437,7 +438,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899319356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66990211b040af94f869ec07c43206cb, type: 3}
   m_Name: 
@@ -488,6 +489,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7e30eee73c241d5448ce0ac372cf6602, type: 3}
+--- !u!114 &899319363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899319356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b77e9f880c71354eae9e9051eb84371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upordown: 0
+  rightorleft: 0
+  isroll: 0
+  isattack: 0
+  isheal: 0
+  run: 0
+  drun: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +520,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -579,7 +600,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe2e6c2e26004b14b8d42975bf9b2d13, type: 3}
   m_Name: 
@@ -591,7 +612,33 @@ MonoBehaviour:
   maxY: 80
   minY: -80
   viewSize: 60
-  defaultAngle: -180
+  defaultAngle: 0
+  radius: 3
+  height: 1.5
+  visiable: 0
+  lockMode: 1
+  inputX: 0
+  inputY: 0
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc091645bd6a7e44a12eb0f75b92c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTarget: {fileID: 899319358}
+  rotate: {x: 0, y: 0}
+  rotateSpeed: 2
+  moveSpeed: 10
+  maxY: 80
+  minY: -80
+  viewSize: 60
+  defaultAngle: -135
   radius: 3
   height: 1.5
   visiable: 0

@@ -23,10 +23,7 @@ public class dragonconrol : MonoBehaviour
             dragonact.SetTrigger("wake");
         }
         CharacterController controller = GetComponent<CharacterController>();
-        if(dragonact.GetCurrentAnimatorStateInfo(0).IsName("Take Off")){
-            dragonspeed = 1;
-            moveDirection = new Vector3(0,1,0);
-        }
+        
         if (controller.isGrounded) {
             moveDirection = dragon.transform.forward;
             moveDirection = transform.TransformDirection(moveDirection);

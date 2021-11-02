@@ -151,7 +151,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 126053817}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 2
   m_Height: 2
   m_Direction: 1
@@ -824,6 +824,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 136948, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}
   m_PrefabInstance: {fileID: 1405262947}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &1383192996 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13772040, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}
+  m_PrefabInstance: {fileID: 1405262947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1383192997
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -837,7 +842,22 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 79b50b34e44b5fd4db1cdc9535a3c86b, type: 3}
+  m_Mesh: {fileID: 0}
+--- !u!114 &1383192998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383192994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc6ddaf50401564ba6fa47711a6b482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeshRenderer: {fileID: 1383192996}
+  Collider: {fileID: 1383192997}
+  FrameInterval: 0
 --- !u!1001 &1405262947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -848,6 +868,18 @@ PrefabInstance:
     - target: {fileID: 139696, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}
       propertyPath: m_Name
       value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 446710, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 446710, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 446710, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 485588, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}
       propertyPath: m_RootOrder
@@ -910,12 +942,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13772040, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 79b50b34e44b5fd4db1cdc9535a3c86b, type: 3}
+    - target: {fileID: 13772040, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}
       propertyPath: m_Quality
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 13772040, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}
       propertyPath: m_UpdateWhenOffscreen
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}

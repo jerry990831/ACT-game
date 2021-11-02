@@ -46,7 +46,7 @@ public class act_col : MonoBehaviour
             act.SetTrigger("attack");
         }
         if(act.GetCurrentAnimatorStateInfo(0).IsName("roll")){
-            speed = rollspeed;
+            speed = 0.0f;
         }
         if(act.GetCurrentAnimatorStateInfo(0).IsName("Ground")){
             if((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft)>0.1f && planlocker == false){

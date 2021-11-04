@@ -18,12 +18,16 @@ public class act_col : MonoBehaviour
     private float weighttarget;
     public float rollspeed=2.0f;
     private Rigidbody rigid;
-
+    public GameObject swordhead;
+    public GameObject swordtair;
+    public bool takedamage = false;
+    public GameObject damageTarget;
+    public bool damagefeature = false;
+    
     void Start()
     {
         input = GetComponent<player>();
         act = maria.GetComponent<Animator>();
-        rigid = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -61,7 +65,17 @@ public class act_col : MonoBehaviour
                 speed =0;
             }
         }
+
+        RaycastHit hit;
+        if (damagefeature){
+            if(Physics.Linecast(swordhead.transform.position, swordtair.transform.position,out hit)){
+                damageTarget = hit.collider.gameObject;
+                damagefeature = false;
+                takedamage = true;
+            }   
+        }
         
+
         CharacterController controller = GetComponent<CharacterController>();
         if (controller.isGrounded) {
             speed = speed * attackspeed;
@@ -74,23 +88,32 @@ public class act_col : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
     }
 
+
     public void Onattack1enter(){
         planlocker = true;
         attackspeed = 0;
         weighttarget = 1;
+        damagefeature = true;
     }
-
+    public void Onattack1exit(){
+        damagefeature = false;
+    }
     public void OnattackUpdate(){
         float weightnow = act.GetLayerWeight(act.GetLayerIndex("ATTACK"));
         weightnow = Mathf.Lerp(weightnow,weighttarget,0.05f);
         act.SetLayerWeight(act.GetLayerIndex("ATTACK"),weightnow);
-
     }
     public void Onattackidle(){
         attackspeed = 1;
         weighttarget = 0;
         planlocker = false;
 
+    }
+    public void Onattack2enter(){
+        damagefeature = true;
+    }
+    public void Onattack2exit(){
+        damagefeature = false;
     }
     public void OnattackidleUpdate(){
         float weightnow = act.GetLayerWeight(act.GetLayerIndex("ATTACK"));

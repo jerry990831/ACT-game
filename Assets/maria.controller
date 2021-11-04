@@ -26,7 +26,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01656debf248704aaf75c3d9a057bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onExitMessages: []
+  onExitMessages:
+  - Onattack1exit
 --- !u!1102 &-8488883043337692937
 AnimatorState:
   serializedVersion: 6
@@ -40,7 +41,9 @@ AnimatorState:
   m_Transitions:
   - {fileID: -8387490404693076696}
   - {fileID: -4173036448912460635}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 7588237246449213090}
+  - {fileID: 6010731182655888841}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -368,25 +371,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: roll
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: heal
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -614,6 +617,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onEnterMessages:
   - onhealenter
+--- !u!114 &6010731182655888841
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01656debf248704aaf75c3d9a057bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onExitMessages:
+  - Onattack2exit
 --- !u!1102 &6135815039745258243
 AnimatorState:
   serializedVersion: 6
@@ -668,6 +685,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &7588237246449213090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e040418cb73b384c85e9787300f4a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnterMessages:
+  - Onattack2enter
 --- !u!1101 &7730824676070666746
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

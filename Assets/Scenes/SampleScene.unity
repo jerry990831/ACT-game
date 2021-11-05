@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.06289297, g: 1, b: 0.43023017, a: 1}
+  m_Color: {r: 1, g: 0.28472826, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -712,7 +712,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 856517433}
   m_FillRect: {fileID: 2050699863}
   m_HandleRect: {fileID: 856517432}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
@@ -1606,8 +1606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af05c0b4c64893d4c968f7703932a190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordhead: {fileID: 1778874457}
-  swordtair: {fileID: 201079308}
 --- !u!1 &1728906259 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1804324718265296, guid: f933c455b886ad644b60dc415ab31bb3, type: 3}
@@ -1771,7 +1769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9716981, g: 0.02444516, b: 0.02444516, a: 1}
+  m_Color: {r: 0.02352939, g: 0.972549, b: 0.11637226, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

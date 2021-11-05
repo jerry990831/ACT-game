@@ -50,7 +50,7 @@ public class act_col : MonoBehaviour
             act.SetTrigger("attack");
         }
         if(act.GetCurrentAnimatorStateInfo(0).IsName("roll")){
-            speed = 0.0f;
+            speed = rollspeed;
         }
         if(act.GetCurrentAnimatorStateInfo(0).IsName("Ground")){
             if((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft)>0.1f && planlocker == false){
@@ -113,6 +113,12 @@ public class act_col : MonoBehaviour
         damagefeature = true;
     }
     public void Onattack2exit(){
+        damagefeature = false;
+    }
+    public void Onattack3enter(){
+        damagefeature = true;
+    }
+    public void Onattack3exit(){
         damagefeature = false;
     }
     public void OnattackidleUpdate(){

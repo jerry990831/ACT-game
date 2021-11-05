@@ -11,12 +11,14 @@ public class dummycontroller : MonoBehaviour
     public GameObject player;
     public act_col controller;
     public Slider slider;
-
+    private float dv;
+    private float valuecurr;
     void Start()
     {
         act = dummy.GetComponent<Animator>();
         controller = player.GetComponent<act_col>();
-    }
+        valuecurr = 0;
+    } 
 
     // Update is called once per frame
     void Update()
@@ -26,11 +28,21 @@ public class dummycontroller : MonoBehaviour
             act.SetTrigger("hurt");
             controller.takedamage =false;
             controller.damageTarget = null;
-            slider.value+=30;
+            valuecurr += 30;
         }
+        slider.value = Mathf.SmoothDamp(slider.value,valuecurr,ref dv,0.1f);
         if(slider.value == 100){
             act.SetTrigger("dead");
         }
-    }
+        if (act.GetCurrentAnimatorStateInfo(0).IsName("died")){
+            if(Time.frameCount % 3 == 0){
+                valuecurr -= 1;
+            }
+            if (valuecurr == 0){
+                act.SetTrigger("awake");
+                slider.value = 0;
+            }
 
+        }
+    }
 }

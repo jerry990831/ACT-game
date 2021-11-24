@@ -24,10 +24,12 @@ public class player : MonoBehaviour
     private float vu;
     private float vr;
     private float vrun;
+
+    public float lerfparamter; 
   
     void Start()
     {
-        
+        lerfparamter = 0.1f;
     }
 
     // Update is called once per frame
@@ -53,8 +55,8 @@ public class player : MonoBehaviour
         }
         
         
-        upordown = Mathf.SmoothDamp(upordown,du,ref vu,0.1f);
-        rightorleft = Mathf.SmoothDamp(rightorleft,dr,ref vr,0.1f);
+        upordown = Mathf.SmoothDamp(upordown,du,ref vu,lerfparamter);
+        rightorleft = Mathf.SmoothDamp(rightorleft,dr,ref vr,lerfparamter);
         if (Convert.ToInt32(Input.GetButton("R1"))!=0)
         {
             drun = Convert.ToInt32(Input.GetButton("R1"));

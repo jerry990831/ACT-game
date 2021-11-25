@@ -468,6 +468,45 @@ MonoBehaviour:
   target: {fileID: 0}
   offset: {x: 0, y: 1, z: 0}
   Camera: {fileID: 963194227}
+--- !u!1 &256852522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100064, guid: f227b5017a7c0184a96c2c26f1e4408d, type: 3}
+  m_PrefabInstance: {fileID: 681241735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &256852524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256852522}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc6ddaf50401564ba6fa47711a6b482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeshRenderer: {fileID: 256852526}
+  Collider: {fileID: 256852525}
+  FrameInterval: 0
+--- !u!64 &256852525
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256852522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!137 &256852526 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700000, guid: f227b5017a7c0184a96c2c26f1e4408d, type: 3}
+  m_PrefabInstance: {fileID: 681241735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &400334693
 GameObject:
   m_ObjectHideFlags: 0

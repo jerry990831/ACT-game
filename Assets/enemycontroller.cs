@@ -69,7 +69,7 @@ public class enemycontroller : MonoBehaviour
             act.SetBool("walk",false);
 
         }
-        if(attackenable && Vector3.Distance(playerhandle.transform.position, this.transform.position) < 2.5f){
+        if(attackenable && Vector3.Distance(playerhandle.transform.position, this.transform.position) < 3f){
             act.SetTrigger("attack");
             if(timer != 0){
                 timer =0;

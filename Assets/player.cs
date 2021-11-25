@@ -18,6 +18,8 @@ public class player : MonoBehaviour
     public bool isattack;
     public string heal;
     public bool isheal;
+    public bool isbackflip;
+    public string backflip;
 
     public float upordown;
     public float rightorleft;
@@ -90,5 +92,6 @@ public class player : MonoBehaviour
             isroll = Input.GetKeyDown(roll); 
 
         }
+        isbackflip = Input.GetKeyDown(backflip);
     }
 }

@@ -29,13 +29,14 @@ public class act_col : MonoBehaviour
     public float playerhealth;
     public Slider slider;
     private float dv;
-
+    public bool timestop;
     void Start()
     {
         input = GetComponent<player>();
         act = maria.GetComponent<Animator>();
         enemyCont = enemyhandle.GetComponent<enemycontroller>();
         playerhealth = 100f;
+        timestop = false;
     }
 
     // Update is called once per frame
@@ -61,6 +62,17 @@ public class act_col : MonoBehaviour
         if(act.GetCurrentAnimatorStateInfo(0).IsName("roll")){
             speed = rollspeed;
         }
+        if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip")){
+            if(act.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.3 && act.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.6){
+                speed = -2.0f;
+            }
+            else{
+                speed = 0;
+            }
+        }
+        if(input.isbackflip){
+            act.SetTrigger("backflip");
+        }
         if(act.GetCurrentAnimatorStateInfo(0).IsName("Ground")){
             if((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft)>0.1f && planlocker == false){
                 Vector3 targetForward = Vector3.Slerp(maria.transform.forward,input.rightorleft*Camera_r+input.upordown*Camera_f,0.07f);
@@ -78,8 +90,17 @@ public class act_col : MonoBehaviour
             Debug.Log("hurt");
             enemyCont.takedamage =false;
             enemyCont.damageTarget = null;
-            playerhealth -= 10;
-            act.SetTrigger("hit");
+            if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip") 
+            && act.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.5 &&
+            timestop == false){
+                Debug.Log("block");
+                timestop = true;
+            }
+            else{
+                playerhealth -= 10;
+                act.SetTrigger("hit");
+            }
+            
         }
         RaycastHit hit;
         if (damagefeature){

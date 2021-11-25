@@ -64,7 +64,7 @@ public class act_col : MonoBehaviour
         }
         if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip")){
             if(act.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.3 && act.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.6){
-                speed = -2.0f;
+                speed = -1*walkspeed;
             }
             else{
                 speed = 0;

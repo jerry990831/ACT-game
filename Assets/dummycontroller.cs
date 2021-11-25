@@ -32,6 +32,7 @@ public class dummycontroller : MonoBehaviour
             valuecurr -= 30;
             
         }
+        
         slider.value = Mathf.SmoothDamp(slider.value,valuecurr,ref dv,0.1f);
         if(slider.value == 0){
             act.SetTrigger("dead");

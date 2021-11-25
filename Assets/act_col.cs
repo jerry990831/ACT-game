@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class act_col : MonoBehaviour
 {
@@ -23,11 +24,18 @@ public class act_col : MonoBehaviour
     public bool takedamage = false;
     public GameObject damageTarget;
     public bool damagefeature = false;
-    
+    public GameObject enemyhandle;
+    public enemycontroller enemyCont;
+    public float playerhealth;
+    public Slider slider;
+    private float dv;
+
     void Start()
     {
         input = GetComponent<player>();
         act = maria.GetComponent<Animator>();
+        enemyCont = enemyhandle.GetComponent<enemycontroller>();
+        playerhealth = 100f;
     }
 
     // Update is called once per frame
@@ -38,6 +46,7 @@ public class act_col : MonoBehaviour
         Camera_r.y=0;
         Vector3 Camera_f = camera1.transform.forward;
         Camera_f.y=0;
+        slider.value = Mathf.SmoothDamp(slider.value,playerhealth,ref dv,0.1f);
         act.SetFloat("forwards",Mathf.Sqrt((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft))*(input.run+1));
         
         if (input.isroll){
@@ -65,7 +74,13 @@ public class act_col : MonoBehaviour
                 speed =0;
             }
         }
-
+        if (enemyCont.takedamage && enemyCont.damageTarget.name=="Playerhandle"){
+            Debug.Log("hurt");
+            enemyCont.takedamage =false;
+            enemyCont.damageTarget = null;
+            playerhealth -= 10;
+            act.SetTrigger("hit");
+        }
         RaycastHit hit;
         if (damagefeature){
             if(Physics.Linecast(swordhead.transform.position, swordtair.transform.position,out hit)){
@@ -74,7 +89,6 @@ public class act_col : MonoBehaviour
                 takedamage = true;
             }   
         }
-        
 
         CharacterController controller = GetComponent<CharacterController>();
         if (controller.isGrounded) {
@@ -135,5 +149,13 @@ public class act_col : MonoBehaviour
         float weightnow = act.GetLayerWeight(act.GetLayerIndex("ATTACK"));
         weightnow = Mathf.Lerp(weightnow,weighttarget,0.05f);
         act.SetLayerWeight(act.GetLayerIndex("ATTACK"),weightnow);
+    }
+    public void gethitenter(){
+        planlocker=true;
+        attackspeed = 0;
+    }
+    public void gethitexit(){
+        planlocker=false;
+        attackspeed = 1;
     }
 }

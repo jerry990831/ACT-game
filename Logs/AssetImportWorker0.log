@@ -15,11 +15,11 @@ D:/College/2021 Fall/CS 576/ACT-game
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63773
+59252
 Successfully changed project path to: D:/College/2021 Fall/CS 576/ACT-game
 D:/College/2021 Fall/CS 576/ACT-game
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 257.06 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 189.29 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.19f1 (68f137dc9bbe)
 [Subsystems] Discovering subsystems at path E:/Unity/2020.3.19f1/Editor/Data/Resources/UnitySubsystems
@@ -36,90 +36,90 @@ Initialize mono
 Mono path[0] = 'E:/Unity/2020.3.19f1/Editor/Data/Managed'
 Mono path[1] = 'E:/Unity/2020.3.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'E:/Unity/2020.3.19f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56612
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56260
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: E:/Unity/2020.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002808 seconds.
+Registered in 0.005152 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 136.05 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 171.91 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.833 seconds
+- Completed reload, in  4.395 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3834ms)
-		BeginReloadAssembly (292ms)
+	ReloadAssembly (4395ms)
+		BeginReloadAssembly (259ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (3ms)
-		EndReloadAssembly (1089ms)
-			LoadAssemblies (288ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (1348ms)
+			LoadAssemblies (261ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (324ms)
+			SetupTypeCache (578ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (83ms)
-			SetupLoadedEditorAssemblies (502ms)
+			RebuildScriptCaches (94ms)
+			SetupLoadedEditorAssemblies (508ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (136ms)
-				BeforeProcessingInitializeOnLoad (23ms)
-				ProcessInitializeOnLoadAttributes (205ms)
-				ProcessInitializeOnLoadMethodAttributes (126ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (172ms)
+				BeforeProcessingInitializeOnLoad (30ms)
+				ProcessInitializeOnLoadAttributes (209ms)
+				ProcessInitializeOnLoadMethodAttributes (84ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (0ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007873 seconds.
+Registered in 0.012461 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.78 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.83 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.450 seconds
+- Completed reload, in  3.859 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3453ms)
-		BeginReloadAssembly (557ms)
+	ReloadAssembly (3863ms)
+		BeginReloadAssembly (751ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (16ms)
+			DisableScriptedObjects (21ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (51ms)
-		EndReloadAssembly (2688ms)
-			LoadAssemblies (377ms)
+			CreateAndSetChildDomain (73ms)
+		EndReloadAssembly (2861ms)
+			LoadAssemblies (523ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (990ms)
+			SetupTypeCache (966ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (118ms)
-			SetupLoadedEditorAssemblies (1031ms)
+			RebuildScriptCaches (116ms)
+			SetupLoadedEditorAssemblies (1140ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (17ms)
 				SetLoadedEditorAssemblies (2ms)
 				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (144ms)
-				ProcessInitializeOnLoadAttributes (841ms)
-				ProcessInitializeOnLoadMethodAttributes (14ms)
-				AfterProcessingInitializeOnLoad (9ms)
+				BeforeProcessingInitializeOnLoad (179ms)
+				ProcessInitializeOnLoadAttributes (908ms)
+				ProcessInitializeOnLoadMethodAttributes (20ms)
+				AfterProcessingInitializeOnLoad (11ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (30ms)
+			AwakeInstancesAfterBackupRestoration (35ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Custom/AdditiveTintable': fallback shader 'Particles/Additive (Soft)' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.25 seconds
-Refreshing native plugins compatible for Editor in 2.59 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.22 seconds
+Refreshing native plugins compatible for Editor in 2.64 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1449 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 169.2 MB.
-System memory in use after: 169.2 MB.
+Unloading 1451 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 171.5 MB.
+System memory in use after: 171.6 MB.
 
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 1915.
-Total: 12.145700 ms (FindLiveObjects: 0.452000 ms CreateObjectMapping: 0.393400 ms MarkObjects: 11.025200 ms  DeleteObjects: 0.270800 ms)
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 1917.
+Total: 11.403100 ms (FindLiveObjects: 0.582000 ms CreateObjectMapping: 0.230500 ms MarkObjects: 10.161400 ms  DeleteObjects: 0.425500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -133,442 +133,57 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Cartoon Castle Building Kit
-  artifactKey: Guid(69d1103c750393142b66644665ea3ab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit using Guid(69d1103c750393142b66644665ea3ab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf5489bafc5db0962c0ecb63fa1e6f37') in 0.017502 seconds 
-  Import took 0.026943 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000843 seconds.
-  path: Assets/Cartoon Castle Building Kit/Fbx
-  artifactKey: Guid(4adfa8120385da74f89cd8b8bd39fbc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Fbx using Guid(4adfa8120385da74f89cd8b8bd39fbc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b621f73b16c31e2398950b2dc198ea34') in 0.008500 seconds 
-  Import took 0.016596 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.399940 seconds.
-  path: Assets/Cartoon Castle Building Kit/Materials
-  artifactKey: Guid(333dc28c8a49bcd49af7cbf16f1c3cf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Materials using Guid(333dc28c8a49bcd49af7cbf16f1c3cf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c65453dd4bfa3356dae47f79f944000') in 0.008711 seconds 
-  Import took 0.017622 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 18.632687 seconds.
-  path: Assets/Cartoon Castle Building Kit/Scenes
-  artifactKey: Guid(568174b959439c54dae806f0be509d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Scenes using Guid(568174b959439c54dae806f0be509d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34f6e7f6c890dd871de2a0d0d6ab35a3') in 0.036014 seconds 
-  Import took 0.046380 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.496653 seconds.
-  path: Assets/Cartoon Castle Building Kit/Terrains
-  artifactKey: Guid(71ac485f108719942b4ef7464aadad1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Terrains using Guid(71ac485f108719942b4ef7464aadad1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b608a4410fce8995131bb23641eed16') in 0.008510 seconds 
-  Import took 0.018138 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.442760 seconds.
-  path: Assets/Cartoon Castle Building Kit/Terrains/Terrain Scene 1.asset
-  artifactKey: Guid(84cc7f49342f64b46842757f20c1b3ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Terrains/Terrain Scene 1.asset using Guid(84cc7f49342f64b46842757f20c1b3ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2e6ce0069688dc6e38bb471c00112ea') in 0.632840 seconds 
-  Import took 0.644564 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.154659 seconds.
-  path: Assets/Cartoon Castle Building Kit/Prefabs
-  artifactKey: Guid(71e131909e8ec364cb4a6775c86ce549) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Prefabs using Guid(71e131909e8ec364cb4a6775c86ce549) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32311e5f495f914e5415c286d95e6dfc') in 0.007601 seconds 
-  Import took 0.019600 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.969351 seconds.
-  path: Assets/Cartoon Castle Building Kit/Prefabs/Walls Prefabs
-  artifactKey: Guid(498804b1603de1d4a847eb14b3c5ad43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Prefabs/Walls Prefabs using Guid(498804b1603de1d4a847eb14b3c5ad43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af42dda3c9ed1c33e55647d9999d0885') in 0.005611 seconds 
-  Import took 0.012851 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.939283 seconds.
-  path: Assets/Cartoon Castle Building Kit/Prefabs/Walls Prefabs/Castle Wall 8.prefab
-  artifactKey: Guid(c475041efe3f8ec468f4c34797299bb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Prefabs/Walls Prefabs/Castle Wall 8.prefab using Guid(c475041efe3f8ec468f4c34797299bb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95b594894f6dd75455dadfbdc1403665') in 0.623567 seconds 
-  Import took 0.631235 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.254173 seconds.
-  path: Assets/Cartoon Castle Building Kit/Textures
-  artifactKey: Guid(93415ddf6bcd5214186426f7c91359c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Textures using Guid(93415ddf6bcd5214186426f7c91359c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14abd2ca223c4b69b220039733890679') in 0.009589 seconds 
-  Import took 0.018743 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.501011 seconds.
-  path: Assets/Cartoon Castle Building Kit/Prefabs/Deco Prefabs
-  artifactKey: Guid(988f543dc03efa649868a33729feb8cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Prefabs/Deco Prefabs using Guid(988f543dc03efa649868a33729feb8cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37b357ae0eefa82d46e1476c80003d6d') in 0.009321 seconds 
-  Import took 0.018079 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.042883 seconds.
-  path: Assets/Cartoon Castle Building Kit/Prefabs/Towers Pilars
-  artifactKey: Guid(19ea2caa6650b004ba822507aaa19596) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Prefabs/Towers Pilars using Guid(19ea2caa6650b004ba822507aaa19596) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d201396317a003b530d40aaa06874b7') in 0.008286 seconds 
-  Import took 0.017749 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.700001 seconds.
-  path: Assets/Cartoon Castle Building Kit/Prefabs/Single Cubes
-  artifactKey: Guid(d57e25f08a170b1499424eb302b76be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Prefabs/Single Cubes using Guid(d57e25f08a170b1499424eb302b76be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd93b727a981c0caa053ece7c337f5dd') in 0.009874 seconds 
-  Import took 0.021016 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.672713 seconds.
-  path: Assets/Cartoon Castle Building Kit/Prefabs/Misc Prefabs
-  artifactKey: Guid(1281ce86fb618394d9d4ef047a381ca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Prefabs/Misc Prefabs using Guid(1281ce86fb618394d9d4ef047a381ca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1294e38b083f8a5284606b652acc105d') in 0.003095 seconds 
-  Import took 0.007322 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.668177 seconds.
-  path: Assets/Cartoon Castle Building Kit/Prefabs/Fence Prefabs
-  artifactKey: Guid(d7e74cd733f7eb84e98ab7730b65a755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Prefabs/Fence Prefabs using Guid(d7e74cd733f7eb84e98ab7730b65a755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b54e208675bdac9085600a0776a31ed6') in 0.010955 seconds 
-  Import took 0.022406 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.701616 seconds.
-  path: Assets/Cartoon Castle Building Kit/Prefabs/Misc Prefabs/Castle Squares.prefab
-  artifactKey: Guid(e45b46d927d9c3641a695ad508ba164c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Prefabs/Misc Prefabs/Castle Squares.prefab using Guid(e45b46d927d9c3641a695ad508ba164c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df8aff1ae03aacabbaf4494ca50d0d01') in 0.046633 seconds 
-  Import took 0.056996 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.751143 seconds.
-  path: Assets/Cartoon Castle Building Kit/Prefabs/Misc Prefabs/Castle Squares 2.prefab
-  artifactKey: Guid(5e9308568f8605343b8e65ded6a36885) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Prefabs/Misc Prefabs/Castle Squares 2.prefab using Guid(5e9308568f8605343b8e65ded6a36885) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9396871809f3999b69139f5731dd36e') in 0.021222 seconds 
-  Import took 0.026848 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.549230 seconds.
-  path: Assets/Cartoon Castle Building Kit/Scenes/Example Scene 4
-  artifactKey: Guid(9191b13255ee1d4459e20c68334498a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Scenes/Example Scene 4 using Guid(9191b13255ee1d4459e20c68334498a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57ea904ec67d6ead577ae22e28af0443') in 0.009600 seconds 
-  Import took 0.020875 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.802877 seconds.
-  path: Assets/Cartoon Castle Building Kit/Scenes/Example Scene 5
-  artifactKey: Guid(e646c469d8de0224f83ac284405e692b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Scenes/Example Scene 5 using Guid(e646c469d8de0224f83ac284405e692b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1a56eb48525b58d9063d15139c8e223') in 0.007029 seconds 
-  Import took 0.014507 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.528824 seconds.
-  path: Assets/Cartoon Castle Building Kit/Scenes/Example Scene 5/Lightmap-0_comp_light.exr
-  artifactKey: Guid(d905bba585896314183fbd21445ce485) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Scenes/Example Scene 5/Lightmap-0_comp_light.exr using Guid(d905bba585896314183fbd21445ce485) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8601d60ef02aff96503b0b3e918b102c') in 0.045454 seconds 
-  Import took 0.054550 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.969364 seconds.
-  path: Assets/Cartoon Castle Building Kit/Scenes/All Models
-  artifactKey: Guid(8a5b3648f3685474282b76ac7d650626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Scenes/All Models using Guid(8a5b3648f3685474282b76ac7d650626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a07cd970a4541b837194d206d88773a') in 0.010116 seconds 
-  Import took 0.021087 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.646555 seconds.
-  path: Assets/Cartoon Castle Building Kit/Scenes/Example Scene 5.unity
-  artifactKey: Guid(74566dea7ed42384caa4a53c8ea67110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Scenes/Example Scene 5.unity using Guid(74566dea7ed42384caa4a53c8ea67110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e33e5c82e4ced5b0b1ed66f32dd8949e') in 0.006392 seconds 
-  Import took 0.013747 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.176149 seconds.
-  path: Assets/Cartoon Castle Building Kit/Scenes/All Models.unity
-  artifactKey: Guid(10c328c290508734c9c98f27ec23dec4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Scenes/All Models.unity using Guid(10c328c290508734c9c98f27ec23dec4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5efa0b4cfca64b0f57e0bba2743b319d') in 0.012569 seconds 
-  Import took 0.022524 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.118241 seconds.
-  path: Assets/Cartoon Castle Building Kit/Scenes/Example Scene 6.unity
-  artifactKey: Guid(9ed4eb0850e38d64492a1be346f21d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Scenes/Example Scene 6.unity using Guid(9ed4eb0850e38d64492a1be346f21d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a444dc51d2bee1b26bb7185e1be93974') in 0.009925 seconds 
-  Import took 0.022342 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.030624 seconds.
-  path: Assets/Cartoon Castle Building Kit/Scenes/Example Scene 7.unity
-  artifactKey: Guid(44efe4177ae573c44a014ece472d1cab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Scenes/Example Scene 7.unity using Guid(44efe4177ae573c44a014ece472d1cab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59ff446f0be57ff715e30eb19239d66d') in 0.011529 seconds 
-  Import took 0.021246 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 61.070184 seconds.
-  path: Assets/Scenes/Terrain.unity
-  artifactKey: Guid(09379c82e4ce599458229833bdaeb201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Terrain.unity using Guid(09379c82e4ce599458229833bdaeb201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c186ea81158bf89900a53d3d0a9dba10') in 0.003400 seconds 
-  Import took 0.007331 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 73.554452 seconds.
-  path: Assets/Wooden_Canopy/meshes/Canopy.fbx
-  artifactKey: Guid(08f014feecd3e074f90b55e0e14d8bab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Wooden_Canopy/meshes/Canopy.fbx using Guid(08f014feecd3e074f90b55e0e14d8bab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96104a2ce2ab2fc310c34f285421b296') in 0.417937 seconds 
-  Import took 0.434915 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.094614 seconds.
-  path: Assets/Cartoon Castle Building Kit/Fbx/Blocks/Castle Block 1x2.fbx
-  artifactKey: Guid(8a74aa7b2635a0e4a980f2a2934362ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Fbx/Blocks/Castle Block 1x2.fbx using Guid(8a74aa7b2635a0e4a980f2a2934362ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34c2dbb5ed9f06da4fecff92081b8a89') in 0.030845 seconds 
-  Import took 0.037414 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000690 seconds.
-  path: Assets/Cartoon Castle Building Kit/Fbx/Blocks/Castle Block 1x3.fbx
-  artifactKey: Guid(4b37d81117ff5704e9a124f2d1ddf743) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Fbx/Blocks/Castle Block 1x3.fbx using Guid(4b37d81117ff5704e9a124f2d1ddf743) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd35b042e7bc925d5c815f73a68dad113') in 0.029242 seconds 
-  Import took 0.035495 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.187960 seconds.
-  path: Assets/Cartoon Castle Building Kit/Fbx/Blocks/Castle Block 1x4.fbx
-  artifactKey: Guid(664eee121e3cead4e8b95fd7219ae5cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Fbx/Blocks/Castle Block 1x4.fbx using Guid(664eee121e3cead4e8b95fd7219ae5cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8e58f45d058dbc929740ad16b662ceb') in 0.034896 seconds 
-  Import took 0.042300 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000609 seconds.
-  path: Assets/Cartoon Castle Building Kit/Fbx/Blocks/Castle Block 1x5.fbx
-  artifactKey: Guid(b9007bf074b5d404bbc4eb8b5d7cfed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Fbx/Blocks/Castle Block 1x5.fbx using Guid(b9007bf074b5d404bbc4eb8b5d7cfed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef0bf0c412f606d64544aecc901fc79d') in 0.030520 seconds 
-  Import took 0.036711 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.152132 seconds.
-  path: Assets/Cartoon Castle Building Kit/Fbx/Blocks/Castle Block 2x2.fbx
-  artifactKey: Guid(0724c141b412f17479022178b1373adc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Fbx/Blocks/Castle Block 2x2.fbx using Guid(0724c141b412f17479022178b1373adc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34107cc6ada4335d906e1067a6b8fcf3') in 0.018684 seconds 
-  Import took 0.023507 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000479 seconds.
-  path: Assets/Cartoon Castle Building Kit/Fbx/Blocks/Castle Block 2x2x2.fbx
-  artifactKey: Guid(d61c333eda528fc4abcb3b9591742dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Fbx/Blocks/Castle Block 2x2x2.fbx using Guid(d61c333eda528fc4abcb3b9591742dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68c93b5e448d008f7ba5a26b79234ba9') in 0.021215 seconds 
-  Import took 0.025632 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.547070 seconds.
-  path: Assets/Medieval_house_lite/FBX/Medieval_house_lite.fbx
-  artifactKey: Guid(05d0dcbe2e37f7c4a9ba340de427e5c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Medieval_house_lite/FBX/Medieval_house_lite.fbx using Guid(05d0dcbe2e37f7c4a9ba340de427e5c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7db56c99e6a3e154ce68318180589a72') in 1.060573 seconds 
-  Import took 1.075539 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.978086 seconds.
-  path: Assets/Cartoon Castle Building Kit/Fbx/Stairs/Castle Stairs 4.fbx
-  artifactKey: Guid(06f5ba544dfc243449dc429e3320971e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Fbx/Stairs/Castle Stairs 4.fbx using Guid(06f5ba544dfc243449dc429e3320971e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de904d8a4d4af7fbf9d2b24cabeaf06a') in 0.028833 seconds 
-  Import took 0.035164 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.769675 seconds.
-  path: Assets/Cartoon Castle Building Kit/Fbx/Stairs/Castle Stairs 2.fbx
-  artifactKey: Guid(eb68d4bcc0caa34458b132bd49a7de8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Fbx/Stairs/Castle Stairs 2.fbx using Guid(eb68d4bcc0caa34458b132bd49a7de8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca79a2829131da06501da696a98ca9e4') in 0.022663 seconds 
-  Import took 0.027090 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000574 seconds.
-  path: Assets/Cartoon Castle Building Kit/Fbx/Stairs/Castle Stairs 3.fbx
-  artifactKey: Guid(ffa6de4bf481b774a983c5ce9afdb01d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Fbx/Stairs/Castle Stairs 3.fbx using Guid(ffa6de4bf481b774a983c5ce9afdb01d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2708b4b646999f6610f26def7cf8e3a') in 0.024619 seconds 
-  Import took 0.030182 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.700793 seconds.
-  path: Assets/Cartoon Castle Building Kit/Fbx/Stairs/Castle Stairs 1.fbx
-  artifactKey: Guid(1a25b5ec1422fe244875130c51d79e96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Fbx/Stairs/Castle Stairs 1.fbx using Guid(1a25b5ec1422fe244875130c51d79e96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af6b535dc8d76da1e89dc72b1720de75') in 0.016138 seconds 
-  Import took 0.020713 seconds .
+  path: Assets/Scenes/Dungeon.unity
+  artifactKey: Guid(df16f2f16b597af4aa2c50150a480f37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Dungeon.unity using Guid(df16f2f16b597af4aa2c50150a480f37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef8baf249e377d070772d9b6202d4bf7') in 0.042496 seconds 
+  Import took 0.051238 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.008391 seconds.
+Registered in 0.008523 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.09 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.36 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.667 seconds
+- Completed reload, in  2.899 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2668ms)
-		BeginReloadAssembly (341ms)
+	ReloadAssembly (2901ms)
+		BeginReloadAssembly (521ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
+			DisableScriptedObjects (21ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (93ms)
-		EndReloadAssembly (2205ms)
-			LoadAssemblies (306ms)
+			CreateAndSetChildDomain (117ms)
+		EndReloadAssembly (2194ms)
+			LoadAssemblies (449ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (741ms)
+			SetupTypeCache (788ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (89ms)
-			SetupLoadedEditorAssemblies (755ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (111ms)
-				ProcessInitializeOnLoadAttributes (595ms)
-				ProcessInitializeOnLoadMethodAttributes (21ms)
-				AfterProcessingInitializeOnLoad (16ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (30ms)
-Platform modules already initialized, skipping
-Shader 'Custom/AdditiveTintable': fallback shader 'Particles/Additive (Soft)' not found
-Refreshing native plugins compatible for Editor in 0.92 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1429 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 171.1 MB.
-System memory in use after: 171.3 MB.
-
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1930.
-Total: 4.899900 ms (FindLiveObjects: 0.202600 ms CreateObjectMapping: 0.072100 ms MarkObjects: 4.573900 ms  DeleteObjects: 0.049200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 144.768428 seconds.
-  path: Assets/Cartoon Castle Building Kit/Scenes/Example Scene 1.unity
-  artifactKey: Guid(87cfc1656bee0934eb4f2cd564a159a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Scenes/Example Scene 1.unity using Guid(87cfc1656bee0934eb4f2cd564a159a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e285687b32610483fc3b9739fce20908') in 0.031926 seconds 
-  Import took 0.037235 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.848852 seconds.
-  path: Assets/Cartoon Castle Building Kit/Scenes/Example Scene 2.unity
-  artifactKey: Guid(abf7c2fbf25c5d34593006f1e48f9eda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Scenes/Example Scene 2.unity using Guid(abf7c2fbf25c5d34593006f1e48f9eda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5025614dbbc5d5e53ed4d1ac22de510') in 0.013782 seconds 
-  Import took 0.021253 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.648804 seconds.
-  path: Assets/Cartoon Castle Building Kit/Scenes/Example Scene 3.unity
-  artifactKey: Guid(48d0ba56f4eeb5d439cf48e3027c3468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cartoon Castle Building Kit/Scenes/Example Scene 3.unity using Guid(48d0ba56f4eeb5d439cf48e3027c3468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ec8de779a35c6edf404de9ed07a5db8') in 0.010638 seconds 
-  Import took 0.019231 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 25.339693 seconds.
-  path: Assets/Scenes/Terrain.unity
-  artifactKey: Guid(09379c82e4ce599458229833bdaeb201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Terrain.unity using Guid(09379c82e4ce599458229833bdaeb201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc3bb233413da917e1f2e64a9c50b380') in 0.005362 seconds 
-  Import took 0.010833 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006532 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.55 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.911 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2912ms)
-		BeginReloadAssembly (301ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (12ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (78ms)
-		EndReloadAssembly (2467ms)
-			LoadAssemblies (289ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (882ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (88ms)
-			SetupLoadedEditorAssemblies (961ms)
+			RebuildScriptCaches (75ms)
+			SetupLoadedEditorAssemblies (836ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (15ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (155ms)
-				ProcessInitializeOnLoadAttributes (761ms)
-				ProcessInitializeOnLoadMethodAttributes (14ms)
-				AfterProcessingInitializeOnLoad (12ms)
+				BeforeProcessingInitializeOnLoad (124ms)
+				ProcessInitializeOnLoadAttributes (676ms)
+				ProcessInitializeOnLoadMethodAttributes (11ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (30ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
 Platform modules already initialized, skipping
 Shader 'Custom/AdditiveTintable': fallback shader 'Particles/Additive (Soft)' not found
-Refreshing native plugins compatible for Editor in 1.06 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.56 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1429 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 171.2 MB.
-System memory in use after: 171.3 MB.
+Unloading 1431 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 169.9 MB.
+System memory in use after: 170.0 MB.
 
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1932.
-Total: 6.641700 ms (FindLiveObjects: 0.367000 ms CreateObjectMapping: 0.150100 ms MarkObjects: 6.068100 ms  DeleteObjects: 0.054000 ms)
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1919.
+Total: 8.083700 ms (FindLiveObjects: 0.356800 ms CreateObjectMapping: 0.130200 ms MarkObjects: 7.541100 ms  DeleteObjects: 0.051900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -580,124 +195,4 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 97.413744 seconds.
-  path: Assets/Scenes/Dungeon.unity
-  artifactKey: Guid(df16f2f16b597af4aa2c50150a480f37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Dungeon.unity using Guid(df16f2f16b597af4aa2c50150a480f37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7730de0ea24fc9e583fa5985201982b2') in 0.034185 seconds 
-  Import took 0.038675 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 140.780416 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack
-  artifactKey: Guid(fe75cbfbde034104291466020cdefc8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack using Guid(fe75cbfbde034104291466020cdefc8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be4937ed91db762e16643c2702aab275') in 0.008838 seconds 
-  Import took 0.019969 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.879315 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Prefabs
-  artifactKey: Guid(739cb2b891d777d4381761a57c0e04f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Prefabs using Guid(739cb2b891d777d4381761a57c0e04f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19d0d87d5818ad228adcb34f3fef102b') in 0.009499 seconds 
-  Import took 0.019282 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.449059 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Prefabs/Furniture
-  artifactKey: Guid(f8259728d0016d047b2343f6c0198882) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Prefabs/Furniture using Guid(f8259728d0016d047b2343f6c0198882) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a4e7655c92a6d5ce0df724cfb678d26') in 0.010537 seconds 
-  Import took 0.020662 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.727268 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Prefabs/Furniture/Amphora.prefab
-  artifactKey: Guid(afc3fedc78427f04097996d062288c66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Prefabs/Furniture/Amphora.prefab using Guid(afc3fedc78427f04097996d062288c66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c3ed748e0f4040670ea65befbe724b7') in 0.103392 seconds 
-  Import took 0.111196 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.040471 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Prefabs/Furniture/Amphora_Stand.prefab
-  artifactKey: Guid(f5709a3035aa0ca4d94745aaf44038fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Prefabs/Furniture/Amphora_Stand.prefab using Guid(f5709a3035aa0ca4d94745aaf44038fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7282677e0bc1ad23e7223b20dbb407ef') in 0.290282 seconds 
-  Import took 0.297183 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.707840 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Prefabs/Furniture/Barrel_Big.prefab
-  artifactKey: Guid(d4fdeae2fb6f5d245b9a6116920d503e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Prefabs/Furniture/Barrel_Big.prefab using Guid(d4fdeae2fb6f5d245b9a6116920d503e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e2f8e6e8ca8e860630f92a57a5c3342') in 0.038211 seconds 
-  Import took 0.048044 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.571784 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Prefabs/Objects
-  artifactKey: Guid(1c6941bad723e984dba9697665c5e1b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Prefabs/Objects using Guid(1c6941bad723e984dba9697665c5e1b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a663a53381d4d5a990bceb60320dff02') in 0.011171 seconds 
-  Import took 0.019975 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.741115 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Prefabs/Objects/Beaker_Empty.prefab
-  artifactKey: Guid(3f45d89cb0c87854fbda8401ab35e5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Prefabs/Objects/Beaker_Empty.prefab using Guid(3f45d89cb0c87854fbda8401ab35e5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8f3564441dab29d3c789ca4fa04c42e') in 0.417446 seconds 
-  Import took 0.424513 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.884595 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Prefabs/Objects/Beaker_Full_Var1.prefab
-  artifactKey: Guid(6e0bde38fc030774cb8444009c09e62c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Prefabs/Objects/Beaker_Full_Var1.prefab using Guid(6e0bde38fc030774cb8444009c09e62c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc35d859b866504b5dfdff09193104d5') in 0.036549 seconds 
-  Import took 0.046039 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.830097 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Prefabs/Objects/Beaker_Small.prefab
-  artifactKey: Guid(f86dc25794fda774aa908152821e0248) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Prefabs/Objects/Beaker_Small.prefab using Guid(f86dc25794fda774aa908152821e0248) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ff1c3ac7d43d0127d0167b60b51aeeb') in 0.036214 seconds 
-  Import took 0.045022 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.142949 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Prefabs/Objects/Book_Big_DeepRed.prefab
-  artifactKey: Guid(6e5642efdd933964d9719bb799658cb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Prefabs/Objects/Book_Big_DeepRed.prefab using Guid(6e5642efdd933964d9719bb799658cb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '298e272ff7e7485fdaa0a15a5791a45e') in 0.039278 seconds 
-  Import took 0.049255 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.949594 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Scenes
-  artifactKey: Guid(5345ca62beb9b8243a2e9dbb3c184916) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Scenes using Guid(5345ca62beb9b8243a2e9dbb3c184916) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98ae0b7f1b667c4f4973131f2fa4d4e8') in 0.010243 seconds 
-  Import took 0.019593 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.424185 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Scenes/Content_Catalogue.unity
-  artifactKey: Guid(a11c2048ef453a741b86bee49b46e6c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Scenes/Content_Catalogue.unity using Guid(a11c2048ef453a741b86bee49b46e6c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8be420b3e8956d01324225bc05eb38d') in 0.012771 seconds 
-  Import took 0.026389 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.546423 seconds.
-  path: Assets/BrokenVector/UltimateDungeonPack/Scenes/Mage_Room_Demo.unity
-  artifactKey: Guid(b94ee59f12f411f488e6df197429e012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BrokenVector/UltimateDungeonPack/Scenes/Mage_Room_Demo.unity using Guid(b94ee59f12f411f488e6df197429e012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50c7688fae7333104af1490f45139cbb') in 0.008168 seconds 
-  Import took 0.037862 seconds .
-
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

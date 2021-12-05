@@ -30,11 +30,17 @@ public class act_col : MonoBehaviour
     public Slider slider;
     private float dv;
     public bool timestop;
+    public GameObject drangonhandle;
+    public dragonconrol dragonCont;
+    public AudioSource playersourse;
     void Start()
     {
         input = GetComponent<player>();
         act = maria.GetComponent<Animator>();
         enemyCont = enemyhandle.GetComponent<enemycontroller>();
+        if(drangonhandle != null){
+            dragonCont = drangonhandle.GetComponent<dragonconrol>();
+        }
         playerhealth = 100f;
         timestop = false;
     }
@@ -86,6 +92,7 @@ public class act_col : MonoBehaviour
                 speed =0;
             }
         }
+
         if (enemyCont.takedamage && enemyCont.damageTarget.name=="Playerhandle"){
             Debug.Log("hurt");
             enemyCont.takedamage =false;
@@ -102,6 +109,26 @@ public class act_col : MonoBehaviour
             }
             
         }
+        if(drangonhandle!=null){
+            if (dragonCont.takedamage && dragonCont.damageTarget.name=="Playerhandle"){
+                Debug.Log("hurt");
+                dragonCont.takedamage =false;
+                dragonCont.damageTarget = null;
+                if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip") 
+                && act.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.5 &&
+                timestop == false){
+                    Debug.Log("block");
+                    timestop = true;
+                }
+                else{
+                    playerhealth -= 10;
+                    act.SetTrigger("hit");
+                }
+            
+            }
+        }
+        
+
         RaycastHit hit;
         if (damagefeature){
             if(Physics.Linecast(swordhead.transform.position, swordtair.transform.position,out hit)){
@@ -179,4 +206,12 @@ public class act_col : MonoBehaviour
         planlocker=false;
         attackspeed = 1;
     }
+    public void earhurtenter(){
+        planlocker = true;
+        attackspeed = 0;
+    }
+    public void earhurtexit(){
+        planlocker = false;
+        attackspeed = 1;
+    }    
 }

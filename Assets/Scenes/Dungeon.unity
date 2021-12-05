@@ -5515,7 +5515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: c30aaa583c33b2348af031c97177e88e, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -7955,6 +7955,9 @@ MonoBehaviour:
   playerhealth: 0
   slider: {fileID: 1860917784}
   timestop: 0
+  drangonhandle: {fileID: 0}
+  dragonCont: {fileID: 0}
+  playersourse: {fileID: 0}
 --- !u!114 &329342702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11203,7 +11206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: c30aaa583c33b2348af031c97177e88e, type: 2}
   m_Color: {r: 0.02352939, g: 0.972549, b: 0.11637226, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -23531,7 +23534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: c30aaa583c33b2348af031c97177e88e, type: 2}
   m_Color: {r: 1, g: 0.28472826, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -46531,7 +46534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1979092595
 Light:
   m_ObjectHideFlags: 0

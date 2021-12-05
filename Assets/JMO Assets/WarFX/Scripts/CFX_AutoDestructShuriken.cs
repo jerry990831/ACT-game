@@ -5,6 +5,8 @@ using System.Collections;
 public class CFX_AutoDestructShuriken : MonoBehaviour
 {
 	public bool OnlyDeactivate;
+	public GameObject player;
+	public act_col playerCont;
 	
 	void OnEnable()
 	{
@@ -31,5 +33,12 @@ public class CFX_AutoDestructShuriken : MonoBehaviour
 				break;
 			}
 		}
+	}
+	private void OnParticleCollision(GameObject other)
+    {
+		if(other.gameObject.name == "Playerhandle"){
+			playerCont.playerhealth-=1f;
+		}
+        
 	}
 }

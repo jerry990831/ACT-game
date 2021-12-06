@@ -96,7 +96,7 @@ public class enemycontroller : MonoBehaviour
                 walkenable = true;
                 attackenable = true;
             }
-            if (playercontroller.takedamage && playercontroller.damageTarget.name=="enemyhandle"){
+            if (playercontroller.takedamage && playercontroller.damageTarget.name==this.gameObject.name){
                 Debug.Log("hurt");
                 playercontroller.takedamage =false;
                 playercontroller.damageTarget = null;

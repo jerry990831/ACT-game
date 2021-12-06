@@ -33,11 +33,34 @@ public class act_col : MonoBehaviour
     public GameObject drangonhandle;
     public dragonconrol dragonCont;
     public AudioSource playersourse;
+    public GameObject enemyhandle1;
+    public GameObject enemyhandle2;
+    public GameObject enemyhandle3;
+    public GameObject enemyhandle4;
+    public enemycontroller enemyCont1;
+    public enemycontroller enemyCont2;
+    public enemycontroller enemyCont3;
+    public enemycontroller enemyCont4;
+
     void Start()
     {
         input = GetComponent<player>();
         act = maria.GetComponent<Animator>();
-        enemyCont = enemyhandle.GetComponent<enemycontroller>();
+        if(enemyhandle!=null){
+            enemyCont = enemyhandle.GetComponent<enemycontroller>();
+        }
+        if(enemyhandle1!=null){
+            enemyCont1 = enemyhandle1.GetComponent<enemycontroller>();
+        }
+        if(enemyhandle2!=null){
+            enemyCont2 = enemyhandle2.GetComponent<enemycontroller>();
+        }
+        if(enemyhandle3!=null){
+            enemyCont3 = enemyhandle3.GetComponent<enemycontroller>();
+        }
+        if(enemyhandle4!=null){
+            enemyCont4 = enemyhandle4.GetComponent<enemycontroller>();
+        }
         if(drangonhandle != null){
             dragonCont = drangonhandle.GetComponent<dragonconrol>();
         }
@@ -92,22 +115,90 @@ public class act_col : MonoBehaviour
                 speed =0;
             }
         }
-
-        if (enemyCont.takedamage && enemyCont.damageTarget.name=="Playerhandle"){
-            Debug.Log("hurt");
-            enemyCont.takedamage =false;
-            enemyCont.damageTarget = null;
-            if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip") 
-            && act.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.5 &&
-            timestop == false){
-                Debug.Log("block");
-                timestop = true;
+        if(enemyhandle!=null){
+            if (enemyCont.takedamage && enemyCont.damageTarget.name=="Playerhandle"){
+                Debug.Log("hurt");
+                enemyCont.takedamage =false;
+                enemyCont.damageTarget = null;
+                if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip") 
+                && act.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.5 &&
+                timestop == false){
+                    Debug.Log("block");
+                    timestop = true;
+                }
+                else{
+                    playerhealth -= 10;
+                    act.SetTrigger("hit");
+                }
             }
-            else{
-                playerhealth -= 10;
-                act.SetTrigger("hit");
+        }
+        if(enemyhandle1!=null){
+            if (enemyCont1.takedamage && enemyCont1.damageTarget.name=="Playerhandle"){
+                Debug.Log("hurt");
+                enemyCont1.takedamage =false;
+                enemyCont1.damageTarget = null;
+                if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip") 
+                && act.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.5 &&
+                timestop == false){
+                    Debug.Log("block");
+                    timestop = true;
+                }
+                else{
+                    playerhealth -= 10;
+                    act.SetTrigger("hit");
+                }
             }
-            
+        }
+        if(enemyhandle2!=null){
+            if (enemyCont2.takedamage && enemyCont2.damageTarget.name=="Playerhandle"){
+                Debug.Log("hurt");
+                enemyCont2.takedamage =false;
+                enemyCont2.damageTarget = null;
+                if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip") 
+                && act.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.5 &&
+                timestop == false){
+                    Debug.Log("block");
+                    timestop = true;
+                }
+                else{
+                    playerhealth -= 10;
+                    act.SetTrigger("hit");
+                }
+            }
+        }        
+        if(enemyhandle3!=null){
+            if (enemyCont3.takedamage && enemyCont3.damageTarget.name=="Playerhandle"){
+                Debug.Log("hurt");
+                enemyCont3.takedamage =false;
+                enemyCont3.damageTarget = null;
+                if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip") 
+                && act.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.5 &&
+                timestop == false){
+                    Debug.Log("block");
+                    timestop = true;
+                }
+                else{
+                    playerhealth -= 10;
+                    act.SetTrigger("hit");
+                }
+            }
+        }
+        if(enemyhandle4!=null){
+            if (enemyCont4.takedamage && enemyCont4.damageTarget.name=="Playerhandle"){
+                Debug.Log("hurt");
+                enemyCont4.takedamage =false;
+                enemyCont4.damageTarget = null;
+                if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip") 
+                && act.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.5 &&
+                timestop == false){
+                    Debug.Log("block");
+                    timestop = true;
+                }
+                else{
+                    playerhealth -= 10;
+                    act.SetTrigger("hit");
+                }
+            }
         }
         if(drangonhandle!=null){
             if (dragonCont.takedamage && dragonCont.damageTarget.name=="Playerhandle"){
@@ -127,8 +218,6 @@ public class act_col : MonoBehaviour
             
             }
         }
-        
-
         RaycastHit hit;
         if (damagefeature){
             if(Physics.Linecast(swordhead.transform.position, swordtair.transform.position,out hit)){

@@ -29,11 +29,13 @@ public class guardiancontroller : MonoBehaviour
                 ischating = true;
             }
             if(ischating){
-                Time.timeScale = 0;
-                Cursor.visible = true;
-                chat.gameObject.SetActive(true);
-                messagebar.gameObject.SetActive(false);
-                chatmessage.text = "Guardian: you can find him in that house!";
+                if(Time.timeScale!= 0){
+                    Time.timeScale = 0;
+                    Cursor.visible = true;
+                    chat.gameObject.SetActive(true);
+                    messagebar.gameObject.SetActive(false);
+                    chatmessage.text = "Guardian: Hi. You want to find XXXXX（村长). What do you want to do with him?";
+                }   
             }
             else{
                 messagebar.gameObject.SetActive(true);

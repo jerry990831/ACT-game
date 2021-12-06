@@ -20,6 +20,7 @@ public class enemycontroller : MonoBehaviour
     public GameObject swordtair;
     public bool takedamage;
     public GameObject damageTarget;
+    public GameObject healthbar;
 
     private Animator act;
     private Vector3 moveDirection = Vector3.zero;
@@ -30,6 +31,8 @@ public class enemycontroller : MonoBehaviour
     private act_col playercontroller;
     private float dv;
     private float deathtimer;
+    public bool wakeup;
+
 
     void Start()
     {
@@ -43,94 +46,102 @@ public class enemycontroller : MonoBehaviour
         needclean = false;
         damagefeature = false;
         takedamage = false;
+        act.speed = 0;
+        wakeup = false;
+        healthbar.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(health<0){
-            health=0;
-        }
-        slider.value = Mathf.SmoothDamp(slider.value,health,ref dv,0.1f);
-        
-        if(health>0){
-            skeleton.transform.forward = playerhandle.transform.position-this.transform.position;
-        }
-
-        if( walkenable && Vector3.Distance(playerhandle.transform.position, this.transform.position)<20){
-            if(timer != 0){
-                timer =0;
+        if(wakeup){
+            healthbar.SetActive(true);
+            if(health<0){
+                health=0;
             }
-            speed=2.0f;
-            act.SetBool("walk",true);
-        }
-        else{
-            speed =0.0f;
-            act.SetBool("walk",false);
-
-        }
-        if(attackenable && Vector3.Distance(playerhandle.transform.position, this.transform.position) < 3f){
-            act.SetTrigger("attack");
-            if(timer != 0){
-                timer =0;
+            slider.value = Mathf.SmoothDamp(slider.value,health,ref dv,0.1f);
+            
+            if(health>0){
+                this.transform.forward = this.transform.position-playerhandle.transform.position;
             }
 
-        }
-        if(act.GetCurrentAnimatorStateInfo(0).IsName("attack")){
-            walkenable = false;
-            attackenable = false;
-            speed = 0f;
-        }
-        if( !walkenable && !attackenable){
-            timer+=Time.deltaTime;
-        }
-        if(timer>=1.5f){
-            walkenable = true;
-            attackenable = true;
-        }
-        if (playercontroller.takedamage && playercontroller.damageTarget.name=="enemyhandle"){
-            Debug.Log("hurt");
-            playercontroller.takedamage =false;
-            playercontroller.damageTarget = null;
-            health -= damage;
-            if(health<=0){
-                act.SetTrigger("die");
-                act.SetBool("die_able",false);
-                speed = 0;
+            if( walkenable && Vector3.Distance(playerhandle.transform.position, this.transform.position)<20){
+                if(timer != 0){
+                    timer =0;
+                }
+                speed=2.0f;
+                act.SetBool("walk",true);
             }
-            act.SetTrigger("hit");
+            else{
+                speed =0.0f;
+                act.SetBool("walk",false);
 
-            walkenable = false;
-            attackenable = false;
-        }
-        if(health == 0 && deathtimer < 6.0f){
-            deathtimer += Time.deltaTime;
-        }
-        if(deathtimer>=6.0f){
-            this.transform.gameObject.SetActive(false);
-        }
-        if(act.GetCurrentAnimatorStateInfo(0).IsName("gethit") || act.GetCurrentAnimatorStateInfo(0).IsName("die")){
-            speed = 0.0f;
-        }
-        
-        RaycastHit hit;
-        if (damagefeature){
-            if(Physics.Linecast(swordhead.transform.position, swordtair.transform.position,out hit)){
-                damageTarget = hit.collider.gameObject;
-                damagefeature = false;
-                takedamage = true;
-            }   
-        }
+            }
+            if(attackenable && Vector3.Distance(playerhandle.transform.position, this.transform.position) < 3f){
+                act.SetTrigger("attack");
+                if(timer != 0){
+                    timer =0;
+                }
 
-        CharacterController controller = GetComponent<CharacterController>();
-        if (controller.isGrounded) {
-            moveDirection = skeleton.transform.forward;
-            moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *= speed;
-        }
-        
-        moveDirection.y -= gravity * Time.deltaTime;
-        controller.Move(moveDirection * Time.deltaTime);
+            }
+            if(act.GetCurrentAnimatorStateInfo(0).IsName("attack")){
+                walkenable = false;
+                attackenable = false;
+                speed = 0f;
+            }
+            if( !walkenable && !attackenable){
+                timer+=Time.deltaTime;
+            }
+            if(timer>=1.5f){
+                walkenable = true;
+                attackenable = true;
+            }
+            if (playercontroller.takedamage && playercontroller.damageTarget.name=="enemyhandle"){
+                Debug.Log("hurt");
+                playercontroller.takedamage =false;
+                playercontroller.damageTarget = null;
+                health -= damage;
+                if(health<=0){
+                    act.SetTrigger("die");
+                    act.SetBool("die_able",false);
+                    speed = 0;
+                }
+                act.SetTrigger("hit");
+
+                walkenable = false;
+                attackenable = false;
+            }
+            if(health == 0 && deathtimer < 6.0f){
+                deathtimer += Time.deltaTime;
+            }
+            if(deathtimer>=6.0f){
+                this.transform.gameObject.SetActive(false);
+            }
+            if(act.GetCurrentAnimatorStateInfo(0).IsName("gethit") || act.GetCurrentAnimatorStateInfo(0).IsName("die")){
+                speed = 0.0f;
+            }
+            if(act.GetCurrentAnimatorStateInfo(0).IsName("sit")){
+                speed=0;
+            }
+            RaycastHit hit;
+            if (damagefeature){
+                if(Physics.Linecast(swordhead.transform.position, swordtair.transform.position,out hit)){
+                    damageTarget = hit.collider.gameObject;
+                    damagefeature = false;
+                    takedamage = true;
+                }   
+            }
+
+            CharacterController controller = GetComponent<CharacterController>();
+            if (controller.isGrounded) {
+                moveDirection = this.transform.forward;
+                moveDirection *= -speed;
+            }
+            
+            moveDirection.y -= gravity * Time.deltaTime;
+            controller.Move(moveDirection * Time.deltaTime);
+            }
+       
     }
     public void enemyattackenter(){
         damagefeature = true;

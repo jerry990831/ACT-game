@@ -89,8 +89,14 @@ public Transform followTarget = null;
             rotate.y = maxY;
         }
         controlCamara.fieldOfView = viewSize;
-        Cursor.visible = visiable;
-        Cursor.lockState = lockMode;
+        if(Time.timeScale == 0){
+            Cursor.visible = true;
+        }
+        else{
+            Cursor.visible = (visiable);
+            Cursor.lockState = (lockMode);
+        }
+       
 
 
     }

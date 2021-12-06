@@ -76,7 +76,9 @@ public class act_col : MonoBehaviour
         Camera_r.y=0;
         Vector3 Camera_f = camera1.transform.forward;
         Camera_f.y=0;
-        slider.value = Mathf.SmoothDamp(slider.value,playerhealth,ref dv,0.1f);
+        if(slider != null){
+            slider.value = Mathf.SmoothDamp(slider.value,playerhealth,ref dv,0.1f);
+        }
         act.SetFloat("forwards",Mathf.Sqrt((input.upordown*input.upordown)+(input.rightorleft*input.rightorleft))*(input.run+1));
         
         if (input.isroll){

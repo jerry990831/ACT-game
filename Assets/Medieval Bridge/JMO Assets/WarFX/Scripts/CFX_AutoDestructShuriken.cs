@@ -37,8 +37,7 @@ public class CFX_AutoDestructShuriken : MonoBehaviour
 	private void OnParticleCollision(GameObject other)
     {
 		if(other.gameObject.name == "Playerhandle"){
-			playerCont.playerhealth-=1f;
+			playerCont.playerhealth -= 1f;
 		}
-        
 	}
 }

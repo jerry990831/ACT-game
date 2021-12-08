@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class dungeonevent : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Image talking;
-    public Text text;
+    public Text messagebar;
+    public GameObject playerhandle;
+    public Image chat;
+    public bool ischating; 
+    public Text chatmessage;
 
     void Start()
     {
@@ -17,15 +20,19 @@ public class dungeonevent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(ischating){
+            Time.timeScale = 0;
+            Cursor.visible = true;
+            chat.gameObject.SetActive(true);
+            messagebar.gameObject.SetActive(false);
+            chatmessage.text = "Suddenly there is a big noise coming from the other side of the hall! All the skeletons are awake!";
+            this.gameObject.SetActive(false);
+        }
+
     }
     void OnTriggerEnter(Collider other){
         if(other.gameObject.name == "Playerhandle"){
-            talking.gameObject.SetActive(true);
-            text.text = "there are more skeletons in the room. they are moving!";
-            Time.timeScale = 0;
-            Cursor.visible = true;
-            this.gameObject.SetActive(false);
+           ischating =true;
         }
     }
 }

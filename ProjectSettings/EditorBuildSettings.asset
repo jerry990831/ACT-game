@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 44c40bd5f8317ad46b208180151f1b36
+  - enabled: 1
+    path: Assets/Scenes/Village.unity
+    guid: 09379c82e4ce599458229833bdaeb201
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: df16f2f16b597af4aa2c50150a480f37
+  - enabled: 1
+    path: Assets/Scenes/RuniedVillage.unity
+    guid: 4f749e3abfb0f2e4b8d11952b985f3a7
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

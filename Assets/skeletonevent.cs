@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class skeletonevent : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Image talking;
-    public Text text;
+    public Text messagebar;
+    public GameObject playerhandle;
+    public Image chat;
+    public bool ischating; 
+    public Text chatmessage;
+    
     void Start()
     {
         
@@ -16,15 +20,30 @@ public class skeletonevent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    void OnTriggerEnter(Collider other){
-        if(other.gameObject.name == "Playerhandle"){
-            talking.gameObject.SetActive(true);
-            text.text = "Here is a strange skeleton, you want to do some research. But it move now.";
-            Time.timeScale = 0;
-            Cursor.visible = true;
-            this.gameObject.SetActive(false);
+        if(Vector3.Distance(playerhandle.transform.position, this.transform.position) < 5.0f){
+            if(Input.GetKeyDown("e")){
+                ischating = true;
+            }
+            if(ischating){
+                if(Time.timeScale!= 0){
+                    Time.timeScale = 0;
+                    Cursor.visible = true;
+                    chat.gameObject.SetActive(true);
+                    messagebar.gameObject.SetActive(false);
+                    chatmessage.text = "The skeleton is revived!";
+                    this.gameObject.SetActive(false);
+                }   
+            }
+            else{
+                messagebar.gameObject.SetActive(true);
+                messagebar.text = "Press E to check this skeleton";
+            }
+            
+            
+        }
+        else if (Vector3.Distance(playerhandle.transform.position, this.transform.position) > 5.0f &&
+        Vector3.Distance(playerhandle.transform.position, this.transform.position) < 6.0f){
+            messagebar.gameObject.SetActive(false);
         }
     }
 }

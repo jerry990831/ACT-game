@@ -29,9 +29,11 @@ public class dragonconrol : MonoBehaviour
     public act_col playerCont;
     public hitbox Hitbox;
     public GameObject hitboxhandle;
+    public Vector3 targetVector;
+    public bool changed;
     void Start()
     {
-        dragonlife = 1000f;
+        dragonlife = 100f;
         dragonact = dragon.GetComponent<Animator>();
         playeract = player.GetComponent<Animator>();
         active = false;
@@ -41,6 +43,8 @@ public class dragonconrol : MonoBehaviour
         flame.gameObject.SetActive(false);
         dragonaudio = this.GetComponent<AudioSource>();
         Hitbox = hitboxhandle.GetComponent<hitbox>();
+        targetVector = this.transform.forward;
+        changed = false;
     }
 
     // Update is called once per frame
@@ -66,12 +70,13 @@ public class dragonconrol : MonoBehaviour
             if(Vector3.Distance(player.transform.position,this.transform.position) < 12f && dragonact.GetCurrentAnimatorStateInfo(0).IsName("Walk")){
                 dragonact.SetTrigger("basicattack");
             }
+            this.transform.forward = Vector3.Slerp(this.transform.forward, targetVector, 0.07f);
         }
         if(dragonact.GetCurrentAnimatorStateInfo(0).IsName("Take Off")){
             timer = 0;
         }
         if(dragonact.GetCurrentAnimatorStateInfo(0).IsName("Fly Forward 0")){
-            this.transform.forward = player.transform.position - this.transform.position;
+           targetVector = player.transform.position - this.transform.position;
             dragonspeed = 7.0f;
             if(Vector3.Distance(player.transform.position,this.transform.position) < 20f){
                 dragonact.SetTrigger("farattack");
@@ -79,11 +84,11 @@ public class dragonconrol : MonoBehaviour
         }
         
         if(dragonact.GetCurrentAnimatorStateInfo(0).IsName("Run")){
-            this.transform.forward = player.transform.position - this.transform.position;
+            targetVector = player.transform.position - this.transform.position;
             dragonspeed = 7.0f;
         }
         if(dragonact.GetCurrentAnimatorStateInfo(0).IsName("Walk")){
-            this.transform.forward = player.transform.position - this.transform.position;
+            targetVector = player.transform.position - this.transform.position;
             dragonspeed = 4.0f;
         }
         if(dragonact.GetCurrentAnimatorStateInfo(0).IsName("Basic Attack")){
@@ -102,7 +107,7 @@ public class dragonconrol : MonoBehaviour
             }
         }
         if(dragonact.GetCurrentAnimatorStateInfo(0).IsName("Fly Float")){
-            transform.forward = Vector3.Slerp(transform.forward, targetForward ,  0.1f);
+           targetVector = player.transform.position - this.transform.position;
         }
         if(dragonact.GetCurrentAnimatorStateInfo(0).IsName("Fly Flame Attack")){
             dragonspeed = 0.0f;
@@ -133,7 +138,7 @@ public class dragonconrol : MonoBehaviour
                 }
             }
         }
-        if(dragonact.GetCurrentAnimatorStateInfo(0).IsName("change")){
+        if(dragonact.GetCurrentAnimatorStateInfo(0).IsName("change") ){
             if(dragonact.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.4f && dragonact.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.42f){
                 dragonmodel.GetComponent<SkinnedMeshRenderer>().material = blue;
                 changeeffect.gameObject.SetActive(true);
@@ -142,21 +147,28 @@ public class dragonconrol : MonoBehaviour
         }
         
         if (damagefeature){
-            // if(Physics.Linecast(head1.transform.position, head2.transform.position,out hit1)){
-            //     damageTarget = hit1.collider.gameObject;
-            //     damagefeature = false;
-            //     takedamage = true;
-            // }
-            // if(Physics.Linecast(head3.transform.position, head4.transform.position,out hit2)){
-            //     damageTarget = hit2.collider.gameObject;
-            //     damagefeature = false;
-            //     takedamage = true;
-            // }
             if(Hitbox.damageTarget!=null){
                 damageTarget = Hitbox.damageTarget;
                 damagefeature = false;
                 takedamage = true;
             }
+        }
+        if(dragonlife <= 50 && !changed){
+            dragonact.SetTrigger("change");
+            changed = true;
+        }
+        if (playerCont.takedamage && playerCont.damageTarget.name=="UpperMouth02"){
+                playerCont.takedamage =false;
+                playerCont.damageTarget = null;
+                dragonlife -= 100;
+            }
+        if(dragonlife <= 0.0f){
+            dragonact.SetTrigger("death");
+        }
+        if(dragonact.GetCurrentAnimatorStateInfo(0).IsName("Die")){
+            dragonact.SetBool("isdeath",true);
+            dragonspeed = 0;
+
         }
         CharacterController controller = GetComponent<CharacterController>();
         
@@ -173,6 +185,7 @@ public class dragonconrol : MonoBehaviour
         active = true;
     }
     void changeenter(){
+        playeract.SetTrigger("scream");
 
     }
     void changeexit(){

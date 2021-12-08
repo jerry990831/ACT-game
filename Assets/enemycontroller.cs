@@ -40,7 +40,6 @@ public class enemycontroller : MonoBehaviour
         walkenable = true;
         attackenable = true;
         timer = 0;
-        health = 100f;
         playercontroller = playerhandle.GetComponent<act_col>();
         deathtimer=0;
         needclean = false;
@@ -56,6 +55,7 @@ public class enemycontroller : MonoBehaviour
     {
         if(wakeup){
             healthbar.SetActive(true);
+            act.speed = 1;
             if(health<0){
                 health=0;
             }

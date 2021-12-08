@@ -50,25 +50,7 @@ public class LaunchBulletTime : MonoBehaviour
 
             input.lerfparamter = Mathf.Lerp(input.lerfparamter , 0.02f, t);
         }
-        // if (Input.GetKey(KeyCode.LeftShift))
-        // {
 
-        //     t += Time.deltaTime;
-
-        //     Time.timeScale = Mathf.Lerp(Time.timeScale, 0.2f, t);
-            
-        //     anim.speed = Mathf.Lerp(anim.speed, 5.0f, t);
-
-        //     radiaBlue.Level = Mathf.Lerp(radiaBlue.Level, 15, t);
-
-        //     cae.saturation = Mathf.Lerp(cae.saturation, 0.5f, t);
-
-        //     controller.walkspeed = Mathf.Lerp(controller.walkspeed, 10f, t);
-
-        //     controller.rollspeed = Mathf.Lerp(controller.rollspeed, 10f, t);
-
-        //     input.lerfparamter = Mathf.Lerp(input.lerfparamter , 0.02f, t);
-        // }
         if (t >1.0)
         {
             t = 1f;

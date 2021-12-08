@@ -866,7 +866,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -937,7 +937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: f227b5017a7c0184a96c2c26f1e4408d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: f227b5017a7c0184a96c2c26f1e4408d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -945,7 +945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: f227b5017a7c0184a96c2c26f1e4408d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: f227b5017a7c0184a96c2c26f1e4408d, type: 3}
       propertyPath: m_LocalRotation.z
@@ -957,7 +957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: f227b5017a7c0184a96c2c26f1e4408d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: f227b5017a7c0184a96c2c26f1e4408d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1312,6 +1312,14 @@ MonoBehaviour:
   drangonhandle: {fileID: 1306994818}
   dragonCont: {fileID: 1306994823}
   playersourse: {fileID: 899319362}
+  enemyhandle1: {fileID: 0}
+  enemyhandle2: {fileID: 0}
+  enemyhandle3: {fileID: 0}
+  enemyhandle4: {fileID: 0}
+  enemyCont1: {fileID: 0}
+  enemyCont2: {fileID: 0}
+  enemyCont3: {fileID: 0}
+  enemyCont4: {fileID: 0}
 --- !u!114 &899319360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3882,7 +3890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1306994819
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4040,6 +4048,8 @@ MonoBehaviour:
   playerCont: {fileID: 899319359}
   Hitbox: {fileID: 477296033}
   hitboxhandle: {fileID: 477296032}
+  targetVector: {x: 0, y: 0, z: 0}
+  changed: 0
 --- !u!143 &1306994824
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4345,7 +4355,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4437,7 +4447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!136 &1635897211
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4551,7 +4561,7 @@ MonoBehaviour:
   gravity: 20
   walkspeed: 2
   playerhandle: {fileID: 899319356}
-  health: 0
+  health: 100
   slider: {fileID: 1120555964}
   enemyhandle: {fileID: 1635897210}
   needclean: 0
@@ -4561,6 +4571,8 @@ MonoBehaviour:
   swordtair: {fileID: 93978626}
   takedamage: 0
   damageTarget: {fileID: 0}
+  healthbar: {fileID: 1120555962}
+  wakeup: 1
 --- !u!1 &1650751944
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,7 +41,10 @@ public class act_col : MonoBehaviour
     public enemycontroller enemyCont2;
     public enemycontroller enemyCont3;
     public enemycontroller enemyCont4;
-
+    public bool dead;
+    public Text messagebar;
+    public Image chat;
+    public Text chatmessage;
     void Start()
     {
         input = GetComponent<player>();
@@ -66,6 +69,8 @@ public class act_col : MonoBehaviour
         }
         playerhealth = 100f;
         timestop = false;
+        Time.timeScale=1;
+        dead = false;
     }
 
     // Update is called once per frame
@@ -119,7 +124,6 @@ public class act_col : MonoBehaviour
         }
         if(enemyhandle!=null){
             if (enemyCont.takedamage && enemyCont.damageTarget.name=="Playerhandle"){
-                Debug.Log("hurt");
                 enemyCont.takedamage =false;
                 enemyCont.damageTarget = null;
                 if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip") 
@@ -129,14 +133,13 @@ public class act_col : MonoBehaviour
                     timestop = true;
                 }
                 else{
-                    playerhealth -= 10;
+                    playerhealth -= 50f;
                     act.SetTrigger("hit");
                 }
             }
         }
         if(enemyhandle1!=null){
             if (enemyCont1.takedamage && enemyCont1.damageTarget.name=="Playerhandle"){
-                Debug.Log("hurt");
                 enemyCont1.takedamage =false;
                 enemyCont1.damageTarget = null;
                 if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip") 
@@ -153,7 +156,6 @@ public class act_col : MonoBehaviour
         }
         if(enemyhandle2!=null){
             if (enemyCont2.takedamage && enemyCont2.damageTarget.name=="Playerhandle"){
-                Debug.Log("hurt");
                 enemyCont2.takedamage =false;
                 enemyCont2.damageTarget = null;
                 if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip") 
@@ -170,7 +172,6 @@ public class act_col : MonoBehaviour
         }        
         if(enemyhandle3!=null){
             if (enemyCont3.takedamage && enemyCont3.damageTarget.name=="Playerhandle"){
-                Debug.Log("hurt");
                 enemyCont3.takedamage =false;
                 enemyCont3.damageTarget = null;
                 if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip") 
@@ -224,11 +225,30 @@ public class act_col : MonoBehaviour
         if (damagefeature){
             if(Physics.Linecast(swordhead.transform.position, swordtair.transform.position,out hit)){
                 damageTarget = hit.collider.gameObject;
+                Debug.Log(damageTarget.gameObject.name);
                 damagefeature = false;
                 takedamage = true;
             }   
         }
-
+        if(playerhealth <= 0.0f){
+            act.SetTrigger("death");
+ 
+        }
+        if(act.GetCurrentAnimatorStateInfo(0).IsName("Male Sword Die")){
+            act.SetBool("isdeath",true);
+            planlocker = true;
+            attackspeed = 0;
+            dead = true;
+            if(act.GetCurrentAnimatorStateInfo(0).normalizedTime>=0.95){
+                if(Time.timeScale!= 0){
+                Time.timeScale = 0;
+                Cursor.visible = true;
+                chat.gameObject.SetActive(true);
+                chatmessage.text = "you are died, please press the button to play again!";
+                }   
+            }
+           
+        }
         CharacterController controller = GetComponent<CharacterController>();
         if (controller.isGrounded) {
             speed = speed * attackspeed;

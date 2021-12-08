@@ -9752,7 +9752,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &363772798
 PrefabInstance:
@@ -14303,6 +14303,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9144917434236459188, guid: 09853b7f062375a438e1fcc026b8e7ba, type: 3}
   m_PrefabInstance: {fileID: 536880935}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &539800362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6098996794725213001, guid: 6353832c19eb9674b8143b16ab17c820, type: 3}
+  m_PrefabInstance: {fileID: 172720675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &539800366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539800362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b592442c1ea4f409b5d76c5d7a12a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messagebar: {fileID: 333623515}
+  playerhandle: {fileID: 329342698}
+  chat: {fileID: 864341151}
+  ischating: 0
+  chatmessage: {fileID: 631817839}
 --- !u!1001 &541422964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24030,7 +24052,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &945957455 stripped
 Transform:
@@ -25178,6 +25200,7 @@ MonoBehaviour:
   book: {fileID: 1109752154}
   Readbook: {fileID: 1109752158}
   playerinput: {fileID: 329342702}
+  anotherbook: {fileID: 539800366}
   endgame: 0
 --- !u!114 &995551707
 MonoBehaviour:
@@ -28620,6 +28643,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8528820825029762706, guid: a05d4d94c1106004abcd87df4b8f1777, type: 3}
   m_PrefabInstance: {fileID: 2018689855}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1135343660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1135343662}
+  - component: {fileID: 1135343661}
+  m_Layer: 0
+  m_Name: Scene2start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1135343661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135343660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76667a5eff0abf048a200e7b2bafc751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messagebar: {fileID: 333623515}
+  chat: {fileID: 864341151}
+  chatmessage: {fileID: 631817839}
+--- !u!4 &1135343662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135343660}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.489276, y: 1.2350427, z: 18.105404}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1135883017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30658,7 +30727,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1191791707 stripped
 Transform:
@@ -36174,7 +36243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425950477}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.19, y: 1, z: -10.07}
+  m_LocalPosition: {x: 4.08, y: 2.46, z: -35.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1058075303}
@@ -36191,7 +36260,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 85f2d60ab177d5d47b510e0082f359ed, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -36334,6 +36403,8 @@ MonoBehaviour:
   input: {fileID: 0}
   t: 0
   inital: 0
+  dragon: {fileID: 0}
+  dragonACT: {fileID: 0}
 --- !u!114 &1425950484
 MonoBehaviour:
   m_ObjectHideFlags: 0

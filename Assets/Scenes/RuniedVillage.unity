@@ -1304,6 +1304,8 @@ MonoBehaviour:
   input: {fileID: 1787656889}
   t: 0
   inital: 0
+  dragon: {fileID: 2145695828}
+  dragonACT: {fileID: 2145695831}
 --- !u!114 &492564309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4150,7 +4152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787656885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.09, y: 0.251, z: 6.3}
+  m_LocalPosition: {x: 3.09, y: 0.019, z: 6.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 412755256}
@@ -6878,3 +6880,8 @@ MonoBehaviour:
   damageTarget: {fileID: 0}
   drangonhandle: {fileID: 1936219151}
   dragonCont: {fileID: 1936219153}
+--- !u!95 &2145695831 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9586004, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}
+  m_PrefabInstance: {fileID: 2145695823}
+  m_PrefabAsset: {fileID: 0}

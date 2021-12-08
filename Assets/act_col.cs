@@ -69,7 +69,6 @@ public class act_col : MonoBehaviour
         }
         playerhealth = 100f;
         timestop = false;
-        Time.timeScale=1;
         dead = false;
     }
 

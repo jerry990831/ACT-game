@@ -15,9 +15,6 @@ public class guardiancontroller : MonoBehaviour
     void Start()
     {
         ischating = false;
-        chat.gameObject.SetActive(false);
-        messagebar.gameObject.SetActive(false);
-
         
     }
 

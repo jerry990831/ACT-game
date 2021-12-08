@@ -18,8 +18,15 @@ public class LaunchBulletTime : MonoBehaviour
     public player input;
     public float t;
     public bool inital;
+    public GameObject dragon;
+    public Animator dragonACT;
+    private Vector3 shakePos = Vector3.zero;
+
     void Start(){
         inital = true;
+        if( dragon != null ){
+            dragonACT = dragon.GetComponent<Animator>();
+        }
     }
     void Update()
     {
@@ -67,7 +74,13 @@ public class LaunchBulletTime : MonoBehaviour
             controller.timestop = false;
             inital = true;
         }
-
+        if(dragon!=null){
+            if(dragonACT.GetCurrentAnimatorStateInfo(0).IsName("Scream") || dragonACT.GetCurrentAnimatorStateInfo(0).IsName("change")){
+                transform.localPosition -= shakePos;
+                shakePos = Random.insideUnitSphere / 5.0f;
+                transform.localPosition += shakePos;
+            }
+        }
 
 
     }

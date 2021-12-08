@@ -13,7 +13,6 @@ public class singledooropen : MonoBehaviour
     {
         playerhandle = GameObject.Find("Playerhandle");
         startangle = this.transform.eulerAngles;
-        Debug.Log(startangle);
     }
 
     // Update is called once per frame

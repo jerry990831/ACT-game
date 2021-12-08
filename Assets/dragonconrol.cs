@@ -67,7 +67,7 @@ public class dragonconrol : MonoBehaviour
             if(Vector3.Distance(player.transform.position,this.transform.position) < 17f && dragonact.GetCurrentAnimatorStateInfo(0).IsName("Idle01")){
                 dragonact.SetTrigger("tooclose");
             }
-            if(Vector3.Distance(player.transform.position,this.transform.position) < 12f && dragonact.GetCurrentAnimatorStateInfo(0).IsName("Walk")){
+            if(Vector3.Distance(player.transform.position,this.transform.position) < 10f && dragonact.GetCurrentAnimatorStateInfo(0).IsName("Walk")){
                 dragonact.SetTrigger("basicattack");
             }
             this.transform.forward = Vector3.Slerp(this.transform.forward, targetVector, 0.07f);
@@ -160,7 +160,7 @@ public class dragonconrol : MonoBehaviour
         if (playerCont.takedamage && playerCont.damageTarget.name=="UpperMouth02"){
                 playerCont.takedamage =false;
                 playerCont.damageTarget = null;
-                dragonlife -= 100;
+                dragonlife -= 25;
             }
         if(dragonlife <= 0.0f){
             dragonact.SetTrigger("death");

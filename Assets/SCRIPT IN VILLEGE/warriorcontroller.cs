@@ -13,10 +13,6 @@ public class warriorcontroller : MonoBehaviour
     void Start()
     {
         ischating = false;
-        chat.gameObject.SetActive(false);
-        messagebar.gameObject.SetActive(false);
-
-        
     }
 
     // Update is called once per frame

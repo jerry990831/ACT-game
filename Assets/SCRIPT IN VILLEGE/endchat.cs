@@ -30,6 +30,7 @@ public class endchat : MonoBehaviour
     public GameObject book;
     public readbook Readbook;
     public player playerinput;
+    public readanotherbook anotherbook;
     public bool endgame;
     private string guardiantext1 = "Guardian: Hi. You want to find XXXXX（村长). What do you want to do with him?";
     private string guardiantext2 = "Oh! You are XXX(主角) that XXXXX(村长) mentioned days ago. I think you can find him in his house. XXXX(村长)’s house is in the center of the village.";
@@ -168,13 +169,31 @@ public class endchat : MonoBehaviour
                 SceneManager.LoadScene(3);
             }
         }
-        else if(chatmessage.text == "The game is stopped, you can press continue to play game!"){
-                Time.timeScale = 1;
-                Cursor.visible = false;
-                chat.gameObject.SetActive(false);
-                playerinput.ispaused = false;
-                
+       
+        else if(chatmessage.text =="Perfect Dodge:\nWhen you dodge from the enemy at the time of the attack, you will trigger the perfect dodge."){
+            Time.timeScale = 1;
+            Cursor.visible = false;
+            chat.gameObject.SetActive(false);
+            anotherbook.ischating = false;
         }
-        
+        else if(chatmessage.text == "Skeleton Soldiers:Mix the spider potion with ________. Then pour the potion on the skeleton. __________ you will get the skeleton soldiers."){
+            chatmessage.text = "Perfect Dodge:\nWhen you dodge from the enemy at the time of the attack, you will trigger the perfect dodge.";
+        }
+        else if(chatmessage.text == "The game is stopped, you can press continue to play game!"){
+            Time.timeScale = 1;
+            Cursor.visible = false;
+            chat.gameObject.SetActive(false);
+            playerinput.ispaused = false;
+        }
+        else if( chatmessage.text == "Dungeon Introduction: It’s brighter than I think. But what is that weird smell? It’s actually pretty quiet, and there is no strange sound as the chief said. Let's walk around."){
+            Time.timeScale = 1;
+            Cursor.visible = false;
+            chat.gameObject.SetActive(false);
+        }
+        else if( chatmessage.text == "Village introduction: You are now at XX village. It’s located on the border of XXX empire. Because of its remoteness, there is no person here that can exert the magic. Many people have been killed by the magic creatures. Therefore, the villagers built huge walls to keep out the magic creatures around them."){
+            Time.timeScale = 1;
+            Cursor.visible = false;
+            chat.gameObject.SetActive(false);
+        }
     }
 }

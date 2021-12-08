@@ -14,8 +14,7 @@ public class leadercontroller : MonoBehaviour
     void Start()
     {
         ischating = false;
-        chat.gameObject.SetActive(false);
-        messagebar.gameObject.SetActive(false);
+
 
         
     }

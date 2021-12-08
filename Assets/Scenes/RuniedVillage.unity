@@ -541,6 +541,7 @@ MonoBehaviour:
   door2: {fileID: 0}
   book: {fileID: 0}
   Readbook: {fileID: 0}
+  playerinput: {fileID: 1787656889}
   endgame: 0
 --- !u!114 &326776732
 MonoBehaviour:
@@ -4025,7 +4026,6 @@ GameObject:
   - component: {fileID: 1787656889}
   - component: {fileID: 1787656888}
   - component: {fileID: 1787656887}
-  - component: {fileID: 1787656886}
   m_Layer: 0
   m_Name: Playerhandle
   m_TagString: Untagged
@@ -4033,27 +4033,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1787656886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787656885}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b77e9f880c71354eae9e9051eb84371, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  du: 0
-  dr: 0
-  upordown: 0
-  rightorleft: 0
-  isroll: 0
-  isattack: 0
-  isheal: 0
-  run: 0
-  drun: 0
 --- !u!143 &1787656887
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4145,6 +4124,10 @@ MonoBehaviour:
   upordown: 0
   rightorleft: 0
   lerfparamter: 0
+  ispaused: 0
+  chat: {fileID: 1351435182}
+  chatmessage: {fileID: 650832949}
+  messagebar: {fileID: 1744170327}
 --- !u!136 &1787656890
 CapsuleCollider:
   m_ObjectHideFlags: 0

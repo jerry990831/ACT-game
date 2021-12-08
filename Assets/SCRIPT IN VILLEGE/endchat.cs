@@ -29,6 +29,7 @@ public class endchat : MonoBehaviour
     public GameObject door2;
     public GameObject book;
     public readbook Readbook;
+    public player playerinput;
     public bool endgame;
     private string guardiantext1 = "Guardian: Hi. You want to find XXXXX（村长). What do you want to do with him?";
     private string guardiantext2 = "Oh! You are XXX(主角) that XXXXX(村长) mentioned days ago. I think you can find him in his house. XXXX(村长)’s house is in the center of the village.";
@@ -167,5 +168,13 @@ public class endchat : MonoBehaviour
                 SceneManager.LoadScene(3);
             }
         }
+        else if(chatmessage.text == "The game is stopped, you can press continue to play game!"){
+                Time.timeScale = 1;
+                Cursor.visible = false;
+                chat.gameObject.SetActive(false);
+                playerinput.ispaused = false;
+                
+        }
+        
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
@@ -28,7 +29,11 @@ public class player : MonoBehaviour
     private float vrun;
 
     public float lerfparamter; 
-  
+    public bool ispaused = false;
+    public Image chat;
+    public Text chatmessage;
+    public Text messagebar;
+
     void Start()
     {
         lerfparamter = 0.1f;
@@ -90,7 +95,18 @@ public class player : MonoBehaviour
         else
         {
             isroll = Input.GetKeyDown(roll); 
-
+        }
+        if(Input.GetKeyDown("p")){
+            ispaused = true;
+        }
+        if(ispaused){
+            if(Time.timeScale!= 0){
+                Time.timeScale = 0;
+                Cursor.visible = true;
+                chat.gameObject.SetActive(true);
+                messagebar.gameObject.SetActive(false);
+                chatmessage.text = "The game is stopped, you can press continue to play game!";
+            }   
         }
         isbackflip = Input.GetKeyDown(backflip);
     }

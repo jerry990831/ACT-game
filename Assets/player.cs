@@ -21,6 +21,7 @@ public class player : MonoBehaviour
     public bool isheal;
     public bool isbackflip;
     public string backflip;
+    public bool canheal;
 
     public float upordown;
     public float rightorleft;
@@ -73,15 +74,16 @@ public class player : MonoBehaviour
             drun = Convert.ToInt32(Input.GetKey(isrun));
         }
         run =  Mathf.SmoothDamp(run,drun,ref vrun,0.2f);
-
-        if(Input.GetButtonDown("buttonleft")){
-            isheal = Input.GetButtonDown("buttonleft");
+        if(canheal){
+            if(Input.GetButtonDown("buttonleft")){
+                isheal = Input.GetButtonDown("buttonleft");
+            }
+            else
+            {
+                isheal = Input.GetKeyDown(heal);
+            }
         }
-        else
-        {
-            isheal = Input.GetKeyDown(heal);
-
-        }
+        
         if(Input.GetButtonDown("buttonup")){
             isattack = Input.GetButtonDown("buttonup");
         }

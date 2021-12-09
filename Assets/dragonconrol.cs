@@ -24,13 +24,16 @@ public class dragonconrol : MonoBehaviour
     public bool damagefeature = false;
     public AudioSource dragonaudio;
     public AudioClip scream;
+    public AudioClip flamesound;
     public float dragonlife;
     public GameObject Playerhandle;
     public act_col playerCont;
     public hitbox Hitbox;
     public GameObject hitboxhandle;
     public Vector3 targetVector;
+    public AudioClip fly;
     public bool changed;
+    public bool end;
     void Start()
     {
         dragonlife = 100f;
@@ -45,6 +48,7 @@ public class dragonconrol : MonoBehaviour
         Hitbox = hitboxhandle.GetComponent<hitbox>();
         targetVector = this.transform.forward;
         changed = false;
+        end = false;
     }
 
     // Update is called once per frame
@@ -168,6 +172,9 @@ public class dragonconrol : MonoBehaviour
         if(dragonact.GetCurrentAnimatorStateInfo(0).IsName("Die")){
             dragonact.SetBool("isdeath",true);
             dragonspeed = 0;
+            if(dragonact.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95){
+                end = true;
+            }
 
         }
         CharacterController controller = GetComponent<CharacterController>();
@@ -209,5 +216,11 @@ public class dragonconrol : MonoBehaviour
     void dragonsreamexit(){
         if(!playerCont.playersourse.isPlaying)
             playerCont.playersourse.Play();
+    }
+    void flameenter(){
+        dragonaudio.PlayOneShot(flamesound);
+    }
+    void flyenter(){
+        dragonaudio.PlayOneShot(fly);
     }
 }

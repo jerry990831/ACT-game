@@ -48,7 +48,8 @@ public class endchat : MonoBehaviour
     private string diary3 = "Day 22:\nFinally, the skeleton can react to stand up when there are people around close. And a new finding today, the process seems attractive to the magic creatures. There are some blood eifs that try to snitch into this dungeon whenever I was doing my research.";
     private string diary4 = "Day 45:\nThey can now do the basic attack. The one last thing is to invest on how to control this creature.";
     private string healmagic = "Oh, it's healing magic!\neverything is done here. it is time to leave";
-    
+    private string battlehit1 = "Battle hint for dragon\n1,The dragon is very aggressive, you may have no chance to attack it without a perfect dodge.\n2,The dragon’s skin is very hard, but its head is weak.\n3,The backflip can trigger perfect dodge, but move just a little, And row cannot dodge the attack, but move longer. Using them carefully.\n4. You can press H to use the heal magic to increase the health.";
+
     void Start()
     {
         if(guardianhandle != null ){
@@ -194,6 +195,18 @@ public class endchat : MonoBehaviour
             Time.timeScale = 1;
             Cursor.visible = false;
             chat.gameObject.SetActive(false);
+        }
+        else if( chatmessage.text == battlehit1){
+            Time.timeScale = 1;
+            Cursor.visible = false;
+            chat.gameObject.SetActive(false);
+        }
+        else if(chatmessage.text == "Not a long time after you entered that building, the ground began to shake. A fireball hits the church. Then this dragon flies here and destroys everything."){
+            chatmessage.text = battlehit1;
+        }
+        else if(chatmessage.text == "Congratulations! You defeat the dragon. You say goodbye to the village, and start on a new journey. To be continued. Press continue to back to the menu"){
+            SceneManager.LoadScene(0);
+
         }
     }
 }

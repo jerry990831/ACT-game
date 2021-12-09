@@ -45,6 +45,7 @@ public class act_col : MonoBehaviour
     public Text messagebar;
     public Image chat;
     public Text chatmessage;
+    public AudioClip healsound;
     void Start()
     {
         input = GetComponent<player>();
@@ -80,6 +81,9 @@ public class act_col : MonoBehaviour
         Camera_r.y=0;
         Vector3 Camera_f = camera1.transform.forward;
         Camera_f.y=0;
+        if(playerhealth >= 100f){
+            playerhealth = 100f;
+        }
         if(slider != null){
             slider.value = Mathf.SmoothDamp(slider.value,playerhealth,ref dv,0.1f);
         }
@@ -97,6 +101,9 @@ public class act_col : MonoBehaviour
         if(act.GetCurrentAnimatorStateInfo(0).IsName("roll")){
             speed = rollspeed;
         }
+        if(act.GetCurrentAnimatorStateInfo(1).IsName("heal")){
+            playerhealth+=0.03f;
+        }
         if(act.GetCurrentAnimatorStateInfo(0).IsName("backflip")){
             if(act.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.3 && act.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.6){
                 speed = -1*walkspeed;
@@ -105,6 +112,7 @@ public class act_col : MonoBehaviour
                 speed = 0;
             }
         }
+
         if(input.isbackflip){
             act.SetTrigger("backflip");
         }
@@ -299,6 +307,7 @@ public class act_col : MonoBehaviour
         act.SetLayerWeight(act.GetLayerIndex("ATTACK"),weightnow);
     }
     public void onhealenter(){
+        playersourse.PlayOneShot(healsound);
          planlocker = true;
         attackspeed = 0;
         weighttarget = 1;

@@ -140,7 +140,7 @@ public class act_col : MonoBehaviour
                     timestop = true;
                 }
                 else{
-                    playerhealth -= 50f;
+                    playerhealth -= 10f;
                     act.SetTrigger("hit");
                 }
             }

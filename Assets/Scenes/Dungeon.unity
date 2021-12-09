@@ -2386,7 +2386,7 @@ MonoBehaviour:
   gravity: 20
   walkspeed: 2
   playerhandle: {fileID: 329342698}
-  health: 100
+  health: 40
   slider: {fileID: 1465094487}
   enemyhandle: {fileID: 106256250}
   needclean: 0
@@ -8952,6 +8952,7 @@ MonoBehaviour:
   messagebar: {fileID: 333623515}
   chat: {fileID: 864341151}
   chatmessage: {fileID: 631817839}
+  healsound: {fileID: 0}
 --- !u!114 &329342702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13356,7 +13357,7 @@ MonoBehaviour:
   gravity: 20
   walkspeed: 2
   playerhandle: {fileID: 329342698}
-  health: 100
+  health: 40
   slider: {fileID: 27986296}
   enemyhandle: {fileID: 470525973}
   needclean: 0
@@ -25198,7 +25199,7 @@ MonoBehaviour:
   gravity: 20
   walkspeed: 2
   playerhandle: {fileID: 329342698}
-  health: 100
+  health: 40
   slider: {fileID: 2049497311}
   enemyhandle: {fileID: 964525881}
   needclean: 0
@@ -53398,7 +53399,7 @@ MonoBehaviour:
   slider: {fileID: 1671789176}
   enemyhandle: {fileID: 2032743022}
   needclean: 0
-  damage: 100
+  damage: 40
   damagefeature: 0
   swordhead: {fileID: 332051259}
   swordtair: {fileID: 702499983}

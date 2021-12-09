@@ -31,7 +31,7 @@ public class guardiancontroller : MonoBehaviour
                     Cursor.visible = true;
                     chat.gameObject.SetActive(true);
                     messagebar.gameObject.SetActive(false);
-                    chatmessage.text = "Guardian: Hi. You want to find XXXXX（村长). What do you want to do with him?";
+                    chatmessage.text = "Guardian: Hi. You want to find Chief. What do you want to do with him?";
                 }   
             }
             else{

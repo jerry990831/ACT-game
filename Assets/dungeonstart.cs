@@ -14,7 +14,7 @@ public class dungeonstart : MonoBehaviour
         Time.timeScale = 1;
         if(Time.timeScale!= 0){
             Time.timeScale = 0;
-            chatmessage.text = "Dungeon Introduction: It’s brighter than I think. But what is that weird smell? It’s actually pretty quiet, and there is no strange sound as the chief said. Let's walk around.";
+            chatmessage.text = "Dungeon Introduction: It’s brighter than I think. But what is that weird smell? It’s actually pretty quiet, and there is no strange sound as the chief said. Let's walk around.\nYour goal is clear all enemy here and find out what happne here.";
             Cursor.visible = true;
             chat.gameObject.SetActive(true);
             messagebar.gameObject.SetActive(false);

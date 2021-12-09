@@ -32,8 +32,8 @@ public class endchat : MonoBehaviour
     public player playerinput;
     public readanotherbook anotherbook;
     public bool endgame;
-    private string guardiantext1 = "Guardian: Hi. You want to find XXXXX（村长). What do you want to do with him?";
-    private string guardiantext2 = "Oh! You are XXX(主角) that XXXXX(村长) mentioned days ago. I think you can find him in his house. XXXX(村长)’s house is in the center of the village.";
+    private string guardiantext1 = "Guardian: Hi. You want to find Chief. What do you want to do with him?";
+    private string guardiantext2 = "Oh! You are traveler that chief mentioned days ago. I think you can find him in his house. Chief’s house is in the center of the village.";
     private string chieftext1 = "Dear Sir, We are so appreciated that you can accept our request.  I believe you have seen the weird building at the entrance of the town. That is the source of the creaky noise. That building used to belong to a wizard which disappeared months ago. About two weeks ago, there was a sound coming from the underground of that building. Some bold youth went to check the situation, but none of them came back. Everyone in the village is in a panic right now. I really hope you can help us.";
     private string chieftext2 = "There is a training ground in this village, you can practice a little bit before your adventure.You can go to the wizard’s house whenever you are ready. ";
     private string warriortext1 = "Warriors: You want to practice your sword skill?";
@@ -186,15 +186,18 @@ public class endchat : MonoBehaviour
             chat.gameObject.SetActive(false);
             playerinput.ispaused = false;
         }
-        else if( chatmessage.text == "Dungeon Introduction: It’s brighter than I think. But what is that weird smell? It’s actually pretty quiet, and there is no strange sound as the chief said. Let's walk around."){
+        else if( chatmessage.text == "Dungeon Introduction: It’s brighter than I think. But what is that weird smell? It’s actually pretty quiet, and there is no strange sound as the chief said. Let's walk around.\nYour goal is clear all enemy here and find out what happne here."){
+            Time.timeScale = 1;
+            Cursor.visible = false;
+            chat.gameObject.SetActive(false);
+        }
+        else if(chatmessage.text == "W: front\nS: back\nA: left\nD: right\nW/S/A/D + Q: run\nE: talk with npc"){
             Time.timeScale = 1;
             Cursor.visible = false;
             chat.gameObject.SetActive(false);
         }
         else if( chatmessage.text == "Village introduction: You are now at XX village. It’s located on the border of XXX empire. Because of its remoteness, there is no person here that can exert the magic. Many people have been killed by the magic creatures. Therefore, the villagers built huge walls to keep out the magic creatures around them."){
-            Time.timeScale = 1;
-            Cursor.visible = false;
-            chat.gameObject.SetActive(false);
+            chatmessage.text = "W: front\nS: back\nA: left\nD: right\nW/S/A/D + Q: run\nE: talk with npc";
         }
         else if( chatmessage.text == battlehit1){
             Time.timeScale = 1;

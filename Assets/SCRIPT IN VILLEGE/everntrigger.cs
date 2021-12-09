@@ -21,12 +21,6 @@ public class everntrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        if(Physics.Linecast(trigger1.transform.position, trigger2.transform.position,out hit)){
-                if(hit.collider.gameObject.name == "Playerhandle"){
-                    ischating = true;
-                }
-        }
         if(ischating){
              if(Time.timeScale!= 0){
                     Time.timeScale = 0;
@@ -36,5 +30,10 @@ public class everntrigger : MonoBehaviour
                     chatmessage.text = "Here is the dungeon";
                 }   
         }   
+    }
+    void OnTriggerEnter(Collider other){
+        if(other.gameObject.name == "Playerhandle"){
+           ischating =true;
+        }
     }
 }
